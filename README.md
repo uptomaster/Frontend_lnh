@@ -4,9 +4,54 @@
 ### 📚 과제
 각 주차 세션 전에
 1. 과제로 나오는 강의를 수강하고, 실습을 완료합니다.
-2. 해당 week 디렉터리/자신의 이름 디렉터리 하위에
-3. 자신의 이름으로 브랜치를(`week2/junhee`) 생성 후
+2. 자신의 이름으로 브랜치를(`junhee`) 생성 후
+3. 최상위 폴더 안에 자신의 이름으로 폴더 생성('junhee') 하고 그 안에 주차별로 폴더 생성 (week{#n})
 4. 세션 실습은 practice 디렉터리에, 과제(강의 실습 코드)는 homework에 각각 작성을 완성하신 뒤에 `main` 브랜치로 PR합니다.
+   
+### 📤 프로젝트 열기
+* 프로젝트를 하나 생성하고 IntelliJ에서 원격 저장소를 연결해줍니다
+* ```git init``` // 저장소 생성
+* ```git remote add origin https://github.com/likelion-hongik-14th/Frontend```  //저장소 내 컴퓨터 <-> 원격 연결
+* ```git pull origin main```
+* IntelliJ의 terminal에서 자신의 branch로 checkout을 해주세요
+    * ```git checkout origin [본인 이름]```  //브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.
+    * ex) git checkout origin shinae
+* 작업은 해당 **본인 branch에서만** 진행해주세요 **(~~❌main branch❌~~)**
+    * ```git branch``` : 현재 branch 확인
+
+위의 방식이 어렵다면 깃 Clone 하는 방법을 검색해보기
+
+### 🏡 작업공간 생성
+* Frontend (프로젝트 루트 디렉토리)
+    * 본인 이름의 디렉토리 
+        * 해당 주차 디렉토리 (ex week2)
+            * 스프링 소스코드 or 배운 것 등등
+
+
+| 본인 이름의 디렉토리부터 만들고 시작하시면 됩니다!
+```
+│
+├─ Frontend
+│     │
+│     ├─ 본인 영문이름 (dir)
+│     │     │ 
+|     |     |
+│     │     ├─  week1 (dir)
+│     │     │    ├─ practice (dir)
+│     │     │    └─ homework (dir)
+│     │     │    |   ├─ public
+│     │     │    |   ├─ src
+│     │     │    |   ├─ .gitignore
+│     │     │    |   ├─ index.html
+│     │     │    |   ├─ README.md
+│     │     │
+│     │     ├─ week2 (dir)
+│     │     │    └─ .. 이하 동일
+│     │     │
+│     │     └─ week3 (dir)
+│     │          └─ .. 이하 동일 
+│     │ 
+```
 
 ### 📝 커밋 컨벤션
 commit message는 `[Type] 작성 내용` 으로 통일합니다
@@ -22,8 +67,8 @@ commit message는 `[Type] 작성 내용` 으로 통일합니다
 - [!HOTFIX] : 급하게 치명적인 버그를 고쳐야 하는 경우
 
 ### ✅ PR 규칙
-1. `main`에서 `week{#n}/{이름}`(예: `week2/junhee`)로 브랜치 분기 후
-2. `week{#n}/{이름}/`(예: `week2/junhee/{practice or homework}`) 디렉터리에서 작업합니다.
+1. `main`에서 `{이름}`(예: `junhee`)로 브랜치 분기 후
+2. `{이름}/week{#n}`(예: `junhee/week2/{practice or homework}`) 디렉터리에서 작업합니다.
 3. 과제를 완성한 뒤에는 `main` 브랜치로 PR 합니다.
 4. PR 제목은 `[{keyword}] {제목}`(예: `[Feat] Week2 API 실습 구현 및 과제 실습 완료`) 형식으로 합니다. 커밋 컨벤션과 마찬가지입니다.
 5. Reviewers t-timda, yiyoonseo, wnsjun 3명을 추가해주세요.
