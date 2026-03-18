@@ -11,16 +11,24 @@
 ### 📤 프로젝트 열기
 * 프로젝트를 하나 생성하고 VScode로 열어줍니다.
 * VScode 터미널에서 아래를 수행합니다.
-* ```git clone https://github.com/likelion-hongik-14th/Frontend.git``` // 저장소 클론
-* ``git fetch origin``` // 원격 저장소 최신 내용 -> 로컬에 가져오기
-* ```git pull origin main``` // 원격 내용 가져오고 + 내 현재 브랜치에 합치기(merge) 
-* 본인 브랜치로 이동
-    * ```git checkout origin [본인 이름 브랜치]```  //브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.
-    * ex) git checkout origin junhee
+* ```git clone https://github.com/likelion-hongik-14th/Frontend.git``` // 저장소를 로컬로 가져옵니다
+* 본인 브랜치로 이동 (브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.)
+    * ```git checkout -b [본인 이름 브랜치]``` // 처음에 새 브랜치 생성 + 그 브랜치로 이동(한 번에)
+    * ex) git checkout -b junhee
+    * ```git checkout [본인 이름 브랜치]```  // 이미 존재하는 브랜치로 이동만 함 
+    * ex) git checkout junhee
+    
 * 작업은 해당 **본인 branch에서만** 진행해주세요 **(~~❌main branch❌~~)**
     * ```git branch``` : 현재 branch 확인
-
+      
 위의 방식이 어렵다면 깃 Clone 하는 방법을 검색해보기
+
+### 🔥참고🔥
+* ```git fetch origin``` // 원격 저장소의 변경사항을 로컬로 가져오기만 함
+* ```git pull origin main``` // 원격(main)의 변경사항을 가져와 현재 브랜치에 병합(merge)
+
+원격과 로컬 사이의 동기화가 필요할 때 활용하면 됩니다.
+
 
 ### 🏡 작업공간 생성
 * Frontend (프로젝트 루트 디렉토리)
