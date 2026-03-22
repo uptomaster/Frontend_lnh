@@ -129,25 +129,3 @@ button:hover {
 button:active {
   transform: scale(0.95); 
 }
-
-footer {
-  margin-top: auto;
-  width: 100%;
-  height: 80px;
-  background-color: #eee;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-}
-
-footer a, 
-#contacts {
-  margin: 0;
-  text-decoration: none;
-  color: #777;
-  font-weight: bold;
-  font-size: 1.4rem; 
-  cursor: pointer;
-}
