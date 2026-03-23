@@ -1,0 +1,27 @@
+/* img 크기 고정 */
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+/* flex를 활용하여 가로로 배열 */
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* 버튼의 크기 및 디자인 */
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+/* 사진에 맞춰 위치 조정 */
+h1,
+h4,
+.button {
+  margin-left: 35px;
+}
