@@ -1,7 +1,9 @@
 /* img 크기 고정 */
 img {
-  width: 300px;
-  height: 300px;
+  /* width: 300px;
+  height: 300px; */
+  width: 90%;
+  height: auto;
   border-radius: 10px;
 }
 
@@ -9,7 +11,7 @@ img {
 .list {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 /* 버튼의 크기 및 디자인 */
