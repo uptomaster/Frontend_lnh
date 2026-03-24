@@ -121,6 +121,9 @@ p {
     background-color: lightgray;
 }
 
+.price {
+    font-weight: 550;
+}
 /* 가격변동시 과거 금액 표시 */
 .past_price {
     color: gray;
