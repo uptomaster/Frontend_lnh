@@ -107,6 +107,7 @@ p {
 }
 
 /* +,- 버튼 크기 조정 */
+/* 마찬가지로 호버 상태 구현 */
 .plus_minus {
     background-color: rgb(255,255,255);
     border-radius: 8px;
@@ -116,3 +117,13 @@ p {
     width: 32px;
     height: 32px;
 }
+.plus_minus:hover {
+    background-color: lightgray;
+}
+
+/* 가격변동시 과거 금액 표시 */
+.past_price {
+    color: gray;
+    text-decoration: line-through;
+}
+
