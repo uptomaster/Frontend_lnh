@@ -42,6 +42,10 @@ h2 {
     font-size: 14px;
     line-height: 20px;
 }
+/* 평점 오른쪽 정렬 */
+.rating{
+    float: right;
+}
 /* 회색 글씨 적용 */
 .explain_gray {
     color: rgb(106,106,106);
@@ -62,4 +66,44 @@ p {
     border-radius: 20px;
     object-fit: cover;
     display: block;
+}
+/* 게스트 추천 넣기 위한 태그 */ 
+.image_box {
+  position: relative;
+  width: 100%;
+}
+/* 게스트 추천 */
+.badge {
+    background-color: white;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 100px;
+    height: 25px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 더 살펴보기 버튼 조정 */
+.button_more {
+    margin-top: 32px;
+    margin-right: 15px;
+    background-color: rgb(255,255,255);
+    border-radius: 8px;
+    border-width: 1px;
+    font-size: 16px;
+    width: 120px;
+    height: 48px;
+}
+
+/* +,- 버튼 크기 조정 */
+.plus_minus {
+    background-color: rgb(255,255,255);
+    border-radius: 8px;
+    border-width: 1px;
+    font-size: 16px;
+    font-weight: 400;
+    width: 32px;
+    height: 32px;
 }
