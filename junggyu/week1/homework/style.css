@@ -1,0 +1,65 @@
+/* 전체 사이트의 상하좌우 여백 설정 + 사이트 내부 최대 너비 제한 */
+/* 전체 글꼴 설정 (앞에서 부터 적용 되는데 나는 아마 -apple-system 적용 된듯..?) */
+body {
+    font-family: "Airbnb Cereal VF", Circular, -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+    padding-top: 48px;
+    padding-bottom: 96px;
+    padding-right: 80px;
+    padding-left: 80px;
+    max-width: 1440px;
+} 
+/* 전체 넓이 및 content 사이 간격 설정 */
+main {
+    width: 1080px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(25% - 18px);
+    margin-right: 0;
+    margin-left: 0;
+    column-gap: 24px;
+}
+/* 제목 글씨 크기 및 굵기 */
+h1 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 36px;
+    margin-bottom: 0;
+    padding-bottom: 8px;
+}
+/* 부제목 글씨 크기 및 굵기 */
+h2 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 24px;
+}
+/* content 관련 조정 */
+.airbnb_content {
+    width: 245px;
+    font-size: 14px;
+    line-height: 20px;
+}
+/* 회색 글씨 적용 */
+.explain_gray {
+    color: rgb(106,106,106);
+}
+/* 본문과 총액 사이 여백 제거 (없으면 어느 간격이하로 안줄어서 넣어습니다,,) */
+p {
+    margin-bottom: 0;
+}
+/* 총액 위치 조정 */
+.total_price{
+    display: block;
+    margin-top: 6px;
+}
+/* 이미지 관련 조정 */
+.airbnb_content img {
+    height: 235px;
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+}
