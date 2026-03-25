@@ -1,0 +1,61 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+.airbnb-section {
+    max-width: 1440px; 
+    margin: 0 auto;
+    padding: 48px 80px;
+    color: #222222;
+}
+
+.section-header h1 { font-size: 2rem; font-weight: 500; margin-bottom: 8px; }
+.section-header p { font-size: 1.125rem; color: #222222; margin-bottom: 32px; }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.img-container {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+.badge {
+    position: absolute; top: 12px; left: 12px;
+    background: white; padding: 4px 12px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.info { display: flex; flex-direction: column; gap: 2px; }
+.info-top { display: flex; justify-content: space-between; font-weight: 600; font-size: 15px; }
+.desc, .gray { color: #6A6A6A; font-size: 15px; }
+.desc { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.price { margin-top: 6px; font-size: 15px; }
+.price span { font-weight: 800; }
+
+.controls-wrapper {
+    margin-top: 48px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.more-btn {
+    border: 1px solid #222; background: white;
+    padding: 10px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;
+}
+
+.js-controls { display: flex; align-items: center; gap: 12px; }
+.circle-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 1px solid #DDDDDD; background: white; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+.circle-btn:hover { border-color: #222; background: #f7f7f7; }
