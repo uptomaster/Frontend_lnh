@@ -5,15 +5,9 @@
   padding: 0;
 }
 
-/* 콘텐츠가 담기는 가장 큰 메인 박스 */
-.container {
-  max-width: 1200px; /*박스 넓이가 1200px 이상 안 늘어나게 제한 */
-  margin: 0 auto; /* 화면 정중앙에 오도록 가운데 정렬 */
-}
-
 body {
   display: flex;
-  justify-content: center; /* 자식(container)을 가로 방향 정중앙으로 배치 */
+  justify-content: center; /* container을 가로 방향 정중앙으로 배치 */
   padding: 40px;
 }
 
@@ -21,10 +15,10 @@ header {
   margin-bottom: 24px; /* 아래쪽 숙소 그리드와의 간격 띄우기 */
 }
 
-/* 메인 제목 ("넓은 공간을 갖춘 숙소") */
+/* 메인 제목 */
 header h1 {
   font-size: 26px; /* 글자 크기 설정 */
-  font-weight: 600; /* 글자 굵기 설정 */
+  font-weight: 500; /* 글자 굵기 설정 */
   margin-bottom: 8px; /* 밑에 있는 부제목(p)과의 간격 */
 }
 
@@ -53,7 +47,6 @@ header p {
 .image-box {
   width: 100%; /* 박스의 가로 넓이에 꽉 차게 */
   aspect-ratio: 1 / 1; /* 정사각형 만들기 */
-  border-radius: 12px; /* 모서리 둥글게 */
   margin-bottom: 12px;
 }
 /* 숙소 이미지 넣기 */
@@ -88,7 +81,7 @@ header p {
   color: grey; /* 회색 폰트 */
   margin-bottom: 2px;
   white-space: nowrap; /* 글자가 길어도 다음 줄로 줄바꿈 금지 */
-  overflow: hidden; /* 박스 영역을 벗어난 글자는 안 보이게 숨김 */
+  overflow: hidden; /* 잘리는 글자는 안 보이게 숨김 */
 }
 
 /* 가격 박스 */
@@ -133,5 +126,5 @@ header p {
   display: flex;
   align-items: center; /* 가로 세로 중앙정렬 */
   justify-content: center;
-  color: black; /* 기호 색상 */
+  color: black; /* +-기호 색상 */
 }
