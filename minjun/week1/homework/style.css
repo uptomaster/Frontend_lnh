@@ -1,0 +1,137 @@
+/* 일단 웹페이지 초기화 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 콘텐츠가 담기는 가장 큰 메인 박스 */
+.container {
+  max-width: 1200px; /*박스 넓이가 1200px 이상 안 늘어나게 제한 */
+  margin: 0 auto; /* 화면 정중앙에 오도록 가운데 정렬 */
+}
+
+body {
+  display: flex;
+  justify-content: center; /* 자식(container)을 가로 방향 정중앙으로 배치 */
+  padding: 40px;
+}
+
+header {
+  margin-bottom: 24px; /* 아래쪽 숙소 그리드와의 간격 띄우기 */
+}
+
+/* 메인 제목 ("넓은 공간을 갖춘 숙소") */
+header h1 {
+  font-size: 26px; /* 글자 크기 설정 */
+  font-weight: 600; /* 글자 굵기 설정 */
+  margin-bottom: 8px; /* 밑에 있는 부제목(p)과의 간격 */
+}
+
+/* 부제목 (회색 설명글) */
+header p {
+  font-size: 16px;
+  color: grey;
+}
+
+/* 숙소 사진들을 4개씩 나란히 배치 */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+/* 개별 숙소 카드 1개 */
+.card {
+  display: flex;
+  flex-direction: column; /* 사진과 텍스트가 수직 방향으로 쌓이게 */
+  cursor: pointer; /* 클릭 되게 */
+}
+
+/* 숙소 이미지 박스 */
+.image-box {
+  width: 100%; /* 박스의 가로 넓이에 꽉 차게 */
+  aspect-ratio: 1 / 1; /* 정사각형 만들기 */
+  border-radius: 12px; /* 모서리 둥글게 */
+  margin-bottom: 12px;
+}
+/* 숙소 이미지 넣기 */
+.image-box img {
+  width: 100%; /* 박스에 꽉 차게 */
+  height: 100%;
+}
+
+/* 숙소이름과 별점 */
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+/* 숙소 위치와 이름 텍스트 */
+.location {
+  font-weight: 500;
+}
+
+/* 별점 텍스트 */
+.rating {
+  font-weight: 300;
+}
+
+/* 설명 텍스트 */
+.desc,
+.beds,
+.dates {
+  font-size: 15px;
+  color: grey; /* 회색 폰트 */
+  margin-bottom: 2px;
+  white-space: nowrap; /* 글자가 길어도 다음 줄로 줄바꿈 금지 */
+  overflow: hidden; /* 박스 영역을 벗어난 글자는 안 보이게 숨김 */
+}
+
+/* 가격 박스 */
+.price-box {
+  margin-top: 6px;
+  font-size: 15px;
+}
+.price-box .price {
+  font-weight: 600;
+}
+
+.footer-actions {
+  display: flex; /* 요소들을 가로로 배치 */
+  align-items: center; /* 세로 기준 중앙 정렬*/
+  gap: 16px; /* 버튼 사이 간격 */
+}
+
+/* "더 살펴보기" 버튼 디자인 */
+.btn-more {
+  padding: 12px 24px; /* 버튼 크기 */
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid black; /* 1px짜리 검은색 테두리 */
+  cursor: pointer; /* 클릭되게 */
+}
+
+/* +, - 버튼과 라벨 텍스트를 감싸는 회색 테두리 박스 */
+.price-controls {
+  display: flex; /* 가로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 12px; /* 텍스트와 버튼 사이 간격 */
+  padding: 8px 16px; /* 버튼 크기 */
+  border: 1px solid grey;
+}
+/* 버튼 디자인 */
+.price-controls button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid gray;
+  font-size: 18px; /* (+, -) 글자 크기 */
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* 가로 세로 중앙정렬 */
+  justify-content: center;
+  color: black; /* 기호 색상 */
+}
