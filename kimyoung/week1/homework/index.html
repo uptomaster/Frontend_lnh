@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb Clone</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>넓은 공간을 갖춘 숙소</h1>
+      <p class="subtitle">
+        꿈에 그리던 휴가를 위한 편안한 독채 숙소를 찾아보세요.
+      </p>
+
+      <div class="card-container">
+        <div class="card">
+          <div class="image-box">
+            <img src="images/room1.jpg" />
+          </div>
+          <div class="card-text">
+            <div class="title">
+              <h3>서울의 집</h3>
+              <span class="rating">★ 신규</span>
+            </div>
+            <p>Yuo Stay /코지하우스/ 등촌역6분/염창역...</p>
+            <p>침대 3개</p>
+            <p>4월 23일~28일</p>
+            <p class="price">총액 <span id="price-value">₩918,647</span></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image-box">
+            <img src="images/room2.jpg" />
+            <span class="mark">게스트 선호</span>
+          </div>
+          <div class="card-text">
+            <div class="title">
+              <h3>군자동의 아파트</h3>
+              <span class="rating">★ 4.77 (13)</span>
+            </div>
+            <p>Hail602 / 신축 / Residence / 성수 / 건국,세종&...</p>
+            <p>퀸사이즈 침대 1개</p>
+            <p>5월 6일~11일</p>
+            <p class="price">총액 ₩621,941</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image-box">
+            <img src="images/room3.jpg" />
+          </div>
+          <div class="card-text">
+            <div class="title">
+              <h3>서울의 집</h3>
+              <span class="rating">★ 신규</span>
+            </div>
+            <p>[NEW 오픈특가] 신당역 5분/2룸 3침대/...</p>
+            <p>퀸사이즈 침대 3개</p>
+            <p>4월 13일~18일</p>
+            <p class="price">총액 ₩1,064,478</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image-box">
+            <img src="images/room4.jpg" />
+            <span class="mark">게스트 선호</span>
+          </div>
+          <div class="card-text">
+            <div class="title">
+              <h3>송파1동의 아파트</h3>
+              <span class="rating">★ 5.0 (10)</span>
+            </div>
+            <p>무료짐보관/송파나루5분/석촌역7분/...</p>
+            <p>침대 3개</p>
+            <p>6월 7일~12일</p>
+            <p class="price">총액 ₩553,471</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="more-btn">더 살펴보기</button>
+        <button class="control-btn" id="minus-btn">-</button>
+        <button class="control-btn" id="plus-btn">+</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
