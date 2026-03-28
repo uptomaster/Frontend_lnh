@@ -6,7 +6,7 @@ const MovieList = () => {
 
   return (
     <main className="p-10">
-      <section className="w-100 bg-gray-800 p-6 rounded-lg shadow">
+      <section className="w-100 bg-gray-800 p-6 rounded-lg shadow transition-transform duration-200 hover:scale-105">
         <img
           src={movieImage}
           alt={`${title} 영화 포스터`}
