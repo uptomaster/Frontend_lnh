@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 border-b-1 border-gray-600 left-0 right-0 h-20 bg-black text-white flex items-couter justify-between px-10 z-50">
-      <div className="space-x-10 glex items-center">
+    <nav className="fixed top-0 border-b-1 border-gray-600 left-0 right-0 h-20 bg-black text-white flex items-center justify-between px-10 z-50">
+      <div className="space-x-10 flex items-center">
         <Link to="/" className="font-semibold text-2xl">
           MovieList🎥
         </Link>
