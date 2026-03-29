@@ -3,9 +3,9 @@ import  Navbar  from "./Navbar";
 
 export const Layout = () => {
     return (
-        <div>
+        <div className=" bg-black min-h-screen">
             <Navbar />
-            <div className="pt-20 bg-black text-white min-h-screen">
+            <div className="pt-20  text-white ">
                 <Outlet />
             </div>
         </div>

@@ -5,9 +5,10 @@ const MovieList = () => {
   return (
     <main className="p-10 flex gap-6">
         {movieData.map((movie, index) => {
-            const { movieImage, releaseDate, actor, title, director, description } = movie;
+            const { movieImage, releaseDate, actor, title, director, description, link } = movie;
             
             return (
+                <a key={index} href={link} target="_blank" rel="noreferrer" className="block">
                 <section className="w-100 bg-gray-800 p-6 rounded-lg shadow hover:-translate-y-2 hover:bg-gray-700">
                 <img
                     src={movieImage}
@@ -21,6 +22,7 @@ const MovieList = () => {
                 <p className="text-gray-200">📝 설명: {description}</p>
                 <p className="text-gray-400 text-sm mt-2">📅 개봉일: {releaseDate}</p>
                 </section>
+                </a>
             );
         })}
     </main>
