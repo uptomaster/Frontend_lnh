@@ -12,7 +12,9 @@ const MovieList = () => {
           alt={'${title} 영화 포스터'}
           classNmae="w-full rounded mb-4"
         />
-        <h2 className="m-2 text-2xl font-semibold">{title}</h2>
+        <h2 className="m-2 text-2xl font-semibold hover:text-blue-300">
+          {title}
+        </h2>
         <hr className="my-4" />
         <p className="text-gray-200">👩‍🎤 주연배우 : {actor}</p>
         <p className="text-gray-200">🤵‍♂️ 감독 : {director}</p>

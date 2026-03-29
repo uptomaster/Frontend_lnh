@@ -1,5 +1,5 @@
 const NotFound = () => {
-  return <div>NotFound 페이지입니다</div>;
+  return <div className="text-xl text-red-700">NotFound 404</div>;
 };
 
 export default NotFound;
