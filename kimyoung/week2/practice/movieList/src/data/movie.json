@@ -1,34 +1,26 @@
 [
   {
-    "movieImage": "/src/assets/과속스캔들.png",
-    "releaseDate": "2008년 12월 3일",
-    "actor": "차태현, 박보영, 왕석현",
-    "title": "과속 스캔들",
-    "director": "강형철",
-    "description": "마약, 성형, 섹스스캔들보다 무서운... (과속스캔들), 22살 딸, 6살 손자... 잘나가는 36살 싱글라이프가 무너진다!"
+    "movieImage": "/src/assets/윗집사람들.png",
+    "releaseDate": "2025년 9월 17일",
+    "actor": "하정우, 공효진, 김동욱, 이하늬",
+    "title": "윗집사람들",
+    "director": "하정우",
+    "description": "매일 밤 일어나는 층간소음으로 인해 윗집 부부와 아랫집 부부가 함께 하룻밤 식사를 하게 되면서 벌어지는 예측불허의 이야기를 그린 작품"
   },
   {
-    "movieImage": "/src/assets/국가대표.png",
-    "releaseDate": "2009년 7월 29일",
-    "actor": "하정우, 성동일, 김지석, 김동욱",
-    "title": "국가대표",
-    "director": "김용화",
-    "description": "이 쓰레기들로 뭐 하실려고요? 불순한 목적(?)으로 대한민국 국가대표가 된 녀석들이 온다!"
+    "movieImage": "/src/assets/BTS 더리턴.png",
+    "releaseDate": "2026년 3월 27일",
+    "actor": "김남준, 김석진, 민윤기, 정호석, 박지민, 김태형, 전정국",
+    "title": "BTS 더리턴",
+    "director": "바오 응우옌",
+    "description": "방탄소년단의 컴백 과정을 기록한 넷플릭스 오리지널 다큐멘터리이다"
   },
   {
-    "movieImage": "/src/assets/의형제.png",
-    "releaseDate": "2010년 2월 4일",
-    "actor": "송강호, 강동원",
-    "title": "의형제",
-    "director": "장훈",
-    "description": "우연히 마주친 두 사람은 서로의 신분을 속이고 각자의 목적을 위해 함께 하게 되는데… 적 인줄만 알았던 두 남자. 그러나 시간이 지날수록 친구로서 남자로서 서로를 이해하기 시작한다. 그러던 어느 날, 지원에게 6년 전 그날처럼 북으로부터 지령이 내려오게 되고, 한규와 지원은 인생을 건 마지막 선택을 하게 된다."
-  },
-  {
-    "movieImage": "/src/assets/그 시절, 우리가 좋아했던 소녀.png",
-    "releaseDate": "2012년 8월 22일",
-    "actor": "가진동, 천옌시",
-    "title": "그 시절, 우리가 좋아했던 소녀",
-    "director": "구파도",
-    "description": "영원히 내 눈 속의 사과 같은 너.. 그 때 너도 날 좋아했을까?"
+    "movieImage": "/src/assets/귀공자.png",
+    "releaseDate": "2023년 6월 21일",
+    "actor": "김선호, 강태주, 김강우, 고아라",
+    "title": "귀공자",
+    "director": "박훈정",
+    "description": "복싱 선수 출신의 한 소년이 미스터리한 자들의 타깃이 되어 쫓고 쫓기는 이야기를 그린 액션 누아르. 단 하나의 타겟, 광기의 추격이 시작된다!"
   }
 ]
