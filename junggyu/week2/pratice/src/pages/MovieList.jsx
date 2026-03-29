@@ -8,7 +8,7 @@ const MovieList = () => {
             const { movieImage, releaseDate, actor, title, director, description } = movie;
             
             return (
-                <section className="w-100 bg-gray-800 p-6 rounded-lg shadow">
+                <section className="w-100 bg-gray-800 p-6 rounded-lg shadow hover:-translate-y-2 hover:bg-gray-700">
                 <img
                     src={movieImage}
                     alt={`${title} 영화 포스터`}
