@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "광해, 왕이 된 남자",
-    "poster": "../assets/movie-img/movie1.png",
+    "poster": "/movie-img/movie1.jpg",
     "releaseDate": "2012.09.13",
     "cast": "이병헌, 류승룡, 한효주",
     "director": "추창민",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "title": "라라랜드",
-    "poster": "../assets/movie-img/movie2.png",
+    "poster": "/movie-img/movie2.jpg",
     "releaseDate": "2016.12.07",
     "cast": "라이언 고슬링, 엠마 스톤",
     "director": "데이미언 셔젤",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "title": "탑건: 매버릭",
-    "poster": "../assets/movie-img/movie3.png",
+    "poster": "/movie-img/movie3.jpg",
     "releaseDate": "2022.06.22",
     "cast": "톰 크루즈, 마일즈 텔러",
     "director": "조셉 코신스키",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "title": "어벤져스: 엔드게임",
-    "poster": "../assets/movie-img/movie4.png",
+    "poster": "/movie-img/movie4.jpg",
     "releaseDate": "2019.04.24",
     "cast": "로버트 다우니 주니어, 크리스 에반스",
     "director": "안소니 루소, 조 루소",
