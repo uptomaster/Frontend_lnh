@@ -14,10 +14,10 @@ const MovieList = () => {
         />
         <h2 className="m-2 text-2xl font-semibold">{title}</h2>
         <hr className="my-4" />
-        <p className="text-gray-200">주연배우 : {actor}</p>
-        <p className="text-gray-200">감독 : {director}</p>
-        <p className="text-gray-200">설명 : {description}</p>
-        <p className="text-gray-200 text-sm mt-2">개봉일 : {releaseDate}</p>
+        <p className="text-gray-200">👩‍🎤 주연배우 : {actor}</p>
+        <p className="text-gray-200">🤵‍♂️ 감독 : {director}</p>
+        <p className="text-gray-200">✍️ 설명 : {description}</p>
+        <p className="text-gray-200 text-sm mt-2">📅 개봉일 : {releaseDate}</p>
       </section>
     </main>
   );
