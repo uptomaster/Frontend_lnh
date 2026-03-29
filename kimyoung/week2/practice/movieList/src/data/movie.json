@@ -1,0 +1,8 @@
+{
+  "movieImage": "/src/assets/{넣은 사진 이름}",
+  "releaseDate": "개봉일",
+  "actor": "배우 이름 넣기",
+  "title": "제목 넣기",
+  "director": "감독 이름",
+  "description": "줄거리"
+}
