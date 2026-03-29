@@ -1,26 +1,19 @@
 import movieData from '../data/movie.json';
+import MovieCard from '../components/MovieCard';
 
 const MovieList = () => {
-  const { movieImage, releaseDate, actor, title, director, description } =
-    movieData;
-
   return (
     <main className="p-10">
-      <section className="w-100 bg-gray-800 p-6 rounded-lg shadow">
-        <img
-          src={movieImage}
-          alt={`${title} 영화포스터`}
-          className="w-full rounded mb-4"
-        />
-        <h2 className="text-2xl font-semibold">{title}</h2>
-        <hr className="my-4" />
-        <p className="text-gray-200">🎭 주연배우: {actor}</p>
-        <p className="text-gray-200">🎬 감독: {director}</p>
-        <p className="text-gray-200">📝 설명: {description}</p>
-        <p className="text-gray-400 text-sm mt-2">📅 개봉일: {releaseDate}</p>
-      </section>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 화면 크기에 따라 카드가 배치되는 개수 조정 */}
+       
+       {/* map 함수로 4번까지 반복하게 만듦 */}
+        {movieData.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </div>
     </main>
   );
-}
+};
 
-export default MovieList
+export default MovieList;
