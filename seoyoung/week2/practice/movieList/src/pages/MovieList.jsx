@@ -12,7 +12,7 @@ const MovieList = () => {
           alt={'${title} 영화 포스터'}
           className="w-full rounded mb-4"
         />
-        <h2 className="m-2 text-2xl font-semibold hover:text-blue-300">
+        <h2 className="m-2 text-2xl font-semibold hover:text-purple-300">
           {title}
         </h2>
         <hr className="my-4" />
