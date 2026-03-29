@@ -7,9 +7,15 @@ const Navbar = () => {
         <Link to="/" className="font-semibold text-2xl">
           MovieList🎬
         </Link>
-        <Link to="/top100">Top 100</Link>
-        <Link to="/mypage">My Page</Link>
+        {/* 메뉴들에 hover하면 색이 부드럽게 변하도록 했음 */}
+       <Link to="/top100" className="text-gray-300 hover:text-white transition-colors duration-300">
+          Top 100
+        </Link>
+        <Link to="/mypage" className="text-gray-300 hover:text-white transition-colors duration-300">
+          My Page
+        </Link>
       </div>
+      
       <Link to="/login">Login</Link>
     </nav>
   );
