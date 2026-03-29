@@ -1,0 +1,120 @@
+h1 {
+    font-size: 30px;
+    font-weight: 510;
+    margin: 20px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 420;
+    margin: 20px;
+    margin-top: 0px
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    margin-bottom: 50px;
+}
+
+
+.card {
+    padding: 16px;
+    width: 300px;
+    height: 400px;
+}
+
+.card h2 {
+    font-size: 15px;
+    font-weight: 520; /* 글자 굵기 조절 */
+    margin: 5px;
+}
+
+.card .title {
+    display: flex;
+    justify-content: space-between; /* 제목과 별점 사이 간격 조절 */
+    align-items: center; /* 제목과 별점 수직 정렬 */
+}
+
+.card .image {
+    position: relative; /* 게스트 선호 위치 조절을 위해 부모 요소에 포지션 설정 */
+}
+
+.card .image .prefer {
+    position: absolute; /* 게스트 선호 위치 조절 */
+    top: 13px;
+    left: 15px;
+    background-color: rgba(255, 255, 255);
+    padding: 5px 10px; /* 텍스트 주변 여백 조절 */
+    border-radius: 20px; /* 모서리 둥글게 만들기 */
+    font-size: 12px; /* 글자 크기 조절 */
+    font-weight: 450;
+    color: black;
+}
+
+.card ul { /* card 안 ul 스타일 */
+    font-size: 15px; /* 글자 크기 작게 */
+    font-weight: 438;
+    margin: 5px;
+    list-style: none; /* 리스트 점 제거 */
+    padding: 0;
+    color: rgb(103, 103, 103); /* 글자 색 회색으로 변경 */
+}
+
+.card p {
+    font-size: 15px;
+    margin: 5px;
+    color: rgb(103, 103, 103);
+}
+
+.card p.rating {
+    font-size: 14px;
+    font-weight: 450;
+    color: black;
+}
+
+.card p b {
+    font-size: 14px;
+    font-weight: 530;
+    color: black; /* 총액 강조 */
+}
+
+.card img {
+    width:100%;
+    height: 285px;
+    object-fit: cover; /* 이미지 크기 통일시키고 잘리는 부분 허용 */
+    border-radius: 25px; /* 이미지 모서리 둥글게 만들기 */
+}
+
+a {
+    color: inherit; /* a 태그 기본스타일 제거 */
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px; /* 더 살펴보기 간격 조절 */
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 14px; /* 더 살펴보기 폰트 조절 */
+    font-weight: 450;
+    border: 1px solid black; /* 더 살펴보기 테두리 추가 */
+    padding: 10px 20px; /* 칸 안쪽 여백 추가 */
+    border-radius: 8px; /* 칸 모서리 둥글게 만들기 */
+}
+
+.more {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* 더 살펴보기와 버튼 사이 간격 조절 */
+}
+
+.more button {
+    font-size: 15px;
+    font-weight: 450;
+    color: black;
+    border: none; /* 버튼 테두리 삭제 */
+    background-color: white; /* 버튼 배경색 흰색으로 설정 */
+    padding: 5px 10px; /* 버튼 안쪽 여백 추가 */
+    cursor: pointer; /* 버튼에 마우스 올렸을 때 커서 변경 */
+    margin-bottom: 10px;
+}

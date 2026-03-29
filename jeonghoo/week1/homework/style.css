@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222222;
+}
+
+.wrap {
+    width: 100%;
+    padding: 24px 44px 56px 44px;
+}
+
+.title_area {
+    margin-bottom: 30px;
+}
+
+.title_area h1 {
+    margin: 0 0 12px 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.title_area p {
+    margin: 0;
+    font-size: 16px;
+    color: #222222;
+}
+
+.card_list {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.card {
+    width: 25%;
+}
+
+.image_box {
+    width: 100%;
+    height: 360px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    background-color: #dddddd;
+}
+
+.image_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.guest_badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background-color: white;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.text_box {
+    margin-top: 12px;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.place_name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rating {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.description,
+.bed,
+.date,
+.price {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    color: #6a6a6a;
+}
+
+.price {
+    margin-top: 10px;
+}
+
+#main_price {
+    color: #222222;
+    font-weight: 700;
+}
+
+.button_area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 36px;
+}
+
+.more_btn {
+    width: 124px;
+    height: 60px;
+    background-color: white;
+    border: 1px solid #444444;
+    border-radius: 14px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.price_btn {
+    width: 52px;
+    height: 52px;
+    background-color: white;
+    border: 1px solid #444444;
+    border-radius: 50%;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.more_btn:hover,
+.price_btn:hover {
+    background-color: #eeeeee;
+}
+
+@media (max-width: 1300px) {
+    .card_list {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: calc(50% - 14px);
+    }
+}
+
+@media (max-width: 768px) {
+    .wrap {
+        padding: 20px;
+    }
+
+    .card_list {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .image_box {
+        height: 320px;
+    }
+}
