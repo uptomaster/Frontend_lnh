@@ -1,4 +1,4 @@
-const Mypages = () => {
+const Mypage = () => {
   return (
     <main className="flex flex-row min-h-screen gap-6 text-white px-10 text-center">
       <div className="w-100 m-4 p-4 pb-10 bg-gray-800 rounded-lg">
@@ -11,4 +11,4 @@ const Mypages = () => {
   );
 };
 
-export default Mypages;
+export default Mypage;
