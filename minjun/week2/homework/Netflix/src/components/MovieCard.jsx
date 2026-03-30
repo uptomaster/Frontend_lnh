@@ -17,6 +17,7 @@ const MovieCard = ({ movie }) => {
       <p className="text-gray-200">🎭 주연배우: {actor}</p>
       <p className="text-gray-200">🎬 감독: {director}</p>
       {/* 텍스트를 평소에는 1줄만 보여주다가 hover하면 전체 다 보이게 만들었음 */}
+      {/* 원래는 딱 hover한 카드만 움직이게 하고 싶었다 */}
       <p className="text-gray-200 line-clamp-1 hover:line-clamp-none">📝 설명: {description}</p>
       <p className="text-gray-400 text-sm mt-2">📅 개봉일: {releaseDate}</p>
     </section>
