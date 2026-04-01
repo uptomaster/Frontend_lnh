@@ -7,14 +7,23 @@ const Navbar = () => {
         <Link to="/" className="font-semibold text-2xl hover:text-purple-300">
           MovieList🎥
         </Link>
-        <Link to="/top100" className="hover:text-purple-300 hover:font-bold">
+        <Link
+          to="/top100"
+          className="text-xl hover:text-purple-300 hover:font-bold"
+        >
           Top 100
         </Link>
-        <Link to="/mypage" className="hover:text-purple-300 hover:font-bold">
+        <Link
+          to="/mypage"
+          className="text-xl hover:text-purple-300 hover:font-bold"
+        >
           My Page
         </Link>
       </div>
-      <Link to="/login" className="hover:text-purple-300 hover:font-bold">
+      <Link
+        to="/login"
+        className="text-xl hover:text-purple-300 hover:font-bold"
+      >
         Login
       </Link>
     </nav>
