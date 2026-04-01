@@ -1,0 +1,125 @@
+header {
+  padding :0 40px;
+}
+
+header h1 {
+  font-size : 40px;
+  margin-bottom : 0px;
+}
+
+header p {
+  margin-bottom : 20px;
+}
+
+.grid {
+  display : grid;
+  grid-template-columns : repeat(4,1fr);
+  gap : 24px;
+  padding :0 40px;
+}
+
+.image {
+   position : relative;
+   padding-bottom : 0;
+}
+
+.image img {
+  width : 100%; /*가로 너비는 부모(그리드)에 맞춰서 가득채우고*/
+  aspect-ratio : 1/1; /*가로와 세로 비율을 1:1로 고정시키기*/
+  object-fit: cover; /*사진이 박스에 맞춰지도록 중앙을 기준으로 꽉 채움*/
+  
+  border-radius : 12px;
+}
+
+.guest {
+  position : absolute;
+  top : 12px;
+  left : 12px;
+
+
+  font-size : 13px;
+  background-color : rgb(255, 255, 255);
+  border-radius : 20px;
+  padding : 5px 10px;
+  box-shadow : 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.card {
+  min-width: 0; /* 카드가 긴 글자 때문에 팽창하지 않도록 함*/
+}
+
+
+.info {
+  margin-top : 12px;
+}
+
+.info h6 {
+  margin : 0;
+  font-size : 15px;
+  font-weight : bold;
+
+  display : flex;
+  justify-content : space-between; 
+  /*flex 자식 사이에 남는 공간을 모두 집어넣기*/
+  /*여기서 자식은 이름과 span처리한 별점, 총 2개*/
+
+}
+
+.info p {
+  margin : 0;
+  font-size : 14px;
+}
+
+.introduce {
+  color : gray;
+}
+
+.introduce p { 
+  /*글자가 있는 칸에서 작동시키기*/
+  white-space : nowrap; /*글자가 길더라도, 한줄에 표기되도록 고정*/
+  overflow : hidden; /*상자를 벗어난 글자들은 숨김처리*/
+  text-overflow : ellipsis; /* 글자 끝에 말줄임표 표시*/
+
+}
+
+.total {
+  font-weight : bold;
+   color : black;
+}
+
+footer {
+  display : flex;
+  flex-direction : row;
+  padding :0 40px;
+  margin-top : 20px;
+}
+
+.link {
+  background-color : rgb(255, 255, 255); 
+  font-size : 15px;
+  width : 130px;
+  height : 50px;
+  border-radius : 10px;
+  margin-top : 20px;
+}
+
+a {
+  padding : 3px 20px;
+  color : black;
+  background-color : rgb(255, 255, 255); 
+  text-decoration : none;
+}
+
+.calculate {
+   background-color : rgb(255, 255, 255); 
+  font-size : 15px;
+  border-radius : 10px;
+  margin-top : 20px;
+  padding-left : 10px;
+}
+
+.plus, .minus {
+  font-size : 20px;
+  width: 50px; 
+  height: 50px;
+}
