@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MovieList from './pages/MovieList';
-import MyPage from './pages/MyPage';
+import MyPage from './pages/Mypage';
 import NotFound from './pages/NotFound';
 import Top100 from './pages/Top100';
 import Login from './pages/Login';

@@ -7,8 +7,19 @@ export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,jsx}'],
     plugins: { js },
-    extends: ['js/recommended'],
-    languageOptions: { globals: globals.browser },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
   },
   pluginReact.configs.flat.recommended,
+  {
+    files: ['**/*.{js,mjs,cjs,jsx}'],
+    rules: {
+      'react/prop-types': 'off', //
+      'react/react-in-jsx-scope': 'off',
+    },
+  },
 ]);
