@@ -7,8 +7,8 @@ export const Feed = () => {
   const [feedData, setFeedData] = useState([
     {
       name: 'youngyoom_',
-      profile: null,
-      feedImg: null,
+      profile: '/src/assets/profile.png',
+      feedImg: '/src/assets/FeedImg.png',
       date: '2일',
       likes: 5,
     },
