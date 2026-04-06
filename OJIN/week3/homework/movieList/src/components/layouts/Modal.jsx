@@ -23,7 +23,7 @@ const MovieModal = ({ movie, onClose }) => {
       >
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-md bg-gray-700 px-3 py-1 text-lg font-bold hover:bg-gray-600"
+          className="absolute right-4 top-4 rounded-md bg-gray-700 px-3 py-1 text-lg font-bold hover:bg-gray-600 cursor-pointer"
         >
           X
         </button>

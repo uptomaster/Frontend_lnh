@@ -4,7 +4,7 @@ const MovieCard = ({ movie, onClick }) => {
       onClick={() => {
         onClick(movie);
       }}
-      className="bg-gray-800 p-6 rounded-lg shadow transition-transform duration-200 hover:scale-105"
+      className="bg-gray-800 p-6 rounded-lg shadow transition-transform duration-200 hover:scale-105 cursor-pointer"
     >
       <img
         src={movie.movieImage}
