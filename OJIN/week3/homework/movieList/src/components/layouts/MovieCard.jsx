@@ -1,6 +1,11 @@
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, onClick }) => {
   return (
-    <section className="bg-gray-800 p-6 rounded-lg shadow transition-transform duration-200 hover:scale-105">
+    <section
+      onClick={() => {
+        onClick(movie);
+      }}
+      className="bg-gray-800 p-6 rounded-lg shadow transition-transform duration-200 hover:scale-105"
+    >
       <img
         src={movie.movieImage}
         alt={`${movie.title} 영화 포스터`}
