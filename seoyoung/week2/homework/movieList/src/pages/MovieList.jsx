@@ -1,4 +1,4 @@
-import MovieCard from './MovieCard';
+import MovieCard from '../components/MovieCard';
 import MovieData from '../data/movie.json';
 
 const MovieList = () => {
