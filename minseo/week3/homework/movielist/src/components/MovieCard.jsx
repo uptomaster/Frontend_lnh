@@ -1,8 +1,12 @@
-const MovieCard = ({ movie }) => {
+// onClick 추가
+const MovieCard = ({ movie, onClick }) => { 
   const { movieImage, title, releaseDate, mainCharacter, director, description } = movie;
 
   return (
-    <section className="w-full max-w-sm bg-zinc-900 border border-zinc-800 p-0 rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300">
+    <section 
+      onClick={onClick} // 클릭 이벤트 연결
+      className="w-full max-w-sm bg-zinc-900 border border-zinc-800 p-0 rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer"
+    >
       <img
         src={movieImage}
         alt={`${title} 포스터`}
