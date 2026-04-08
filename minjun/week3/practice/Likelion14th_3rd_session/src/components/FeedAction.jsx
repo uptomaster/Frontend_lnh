@@ -4,19 +4,30 @@ import bookmarkIcon from '../assets/icon_mookmark.svg';
 import likeIcon from '../assets/like.svg';
 // FeedActions 컴포넌트
 export const FeedAction = ({ likes }) => {
-    
+  return (
+    <div className="flex-none h-[83px] flex flex-col justify-end">
+      <div className="flex flex-row items-center justify-between px-[16px] pb-[12px]">
+        <div className="flex flex-row items-center justify-between px-[16px] pb-[12px]">
+          <div className="flex flex-row gap-[13px] cursor-pointer">
+            <img src={dmIcon} alt="share" className="w-[22px] h-[22px]" />
+            <img
+              src={commentIcon}
+              alt="comment"
+              className="w-[22px] h-[22px]"
+            />
 
-    return (
-    <div className="flex-none flex flex-col justify-end">
-      <div className="flex flex-row items-center justify-between">
-        <div className="flex flex-row">
-          <img src={likeIcon} alt="like" className="" />
-          <img src={commentIcon} alt="comment" className="" />
-          <img src={dmIcon} alt="share" className="" />
+            <img src={likeIcon} alt="like" className="w-[22px] h-[22px]" />
+          </div>
+          <img
+            src={bookmarkIcon}
+            alt="bookmark"
+            className="w-[22px] h-[22px]"
+          />
         </div>
-        <img src={bookmarkIcon} alt="bookmark" className="" />
+        <div className="pl-[16px] pb-[13px] font-bold text-[14px] text-black">
+          좋아요 {likes}개
+        </div>
       </div>
-      <div className="">좋아요 {likes}개</div>
     </div>
   );
 };
