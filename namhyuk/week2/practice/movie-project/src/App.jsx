@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import MovieCard from './components/MovieCard';
 import movies from './movies.json';
+import MovieModal from './components/MovieModal';
 
 function App() {
   return (
