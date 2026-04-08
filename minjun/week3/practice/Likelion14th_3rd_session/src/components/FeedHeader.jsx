@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router-dom';
 export const FeedHeader = ({ profile, name, date }) => {
   const navigate = useNavigate();
   const handleNameClick = () => {
-    navigate = `/profile/${name}`;
+    navigate(`/profile/${name}`);
   };
+  // navigate 작동되게 수정
   return (
     <div className="flex-none h-[51px] flex flex-row items-center pl-[7px] pr-[18px] gap-[9px]">
       <div className="relative">
