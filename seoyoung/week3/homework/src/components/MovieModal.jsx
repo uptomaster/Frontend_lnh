@@ -1,4 +1,3 @@
-import './MovieModal.css';
 import { useEffect } from 'react';
 
 const MovieModal = ({ movie, onClose }) => {
@@ -8,7 +7,7 @@ const MovieModal = ({ movie, onClose }) => {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  });
+  }, []);
   //useEffect로 라이프사이클 실행함
   //렌더링시 마운트가 되어서, overflow 즉 스크롤이 숨겨지고,
   //언마운트(끝날 때)  unset으로 다시 되돌려 놓을 수 있음 !!
