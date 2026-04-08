@@ -22,6 +22,20 @@ const MovieList = () => {
                     <MovieCard key={index} movie={movie} onOpenModal={handleModal} />
                 ))}
             </main>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+            <p>ㅁ</p>
+
             {isModalOpen && <Modal movie={clickMovie} onClose={handleXModal} />}
         </>
     );
