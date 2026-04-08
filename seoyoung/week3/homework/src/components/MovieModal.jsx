@@ -1,6 +1,19 @@
 import './MovieModal.css';
+import { useEffect } from 'react';
 
 const MovieModal = ({ movie, onClose }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  });
+  //useEffect로 라이프사이클 실행함
+  //렌더링시 마운트가 되어서, overflow 즉 스크롤이 숨겨지고,
+  //언마운트(끝날 때)  unset으로 다시 되돌려 놓을 수 있음 !!
+  //document.body.style.overflow => 웹페이지 전체의.몸통부분의.디자인설정에서.스크롤바를 -> 숨겨라
+
   return (
     <div
       className="bg-black/80 p-4 z-50 flex items-center justify-center fixed inset-0"
@@ -22,7 +35,7 @@ const MovieModal = ({ movie, onClose }) => {
         {/*화면 높이의 65%로 화면 높이 제한*/}
         <button
           onClick={onClose}
-          className="absolute text-white text-2xl top-1 right-2"
+          className="absolute text-white text-2xl top-1 right-2 cursor-pointer"
         >
           X
         </button>
@@ -30,10 +43,18 @@ const MovieModal = ({ movie, onClose }) => {
           {movie.title}
         </h2>
         <hr className="my-4" />
-        <p className="text-gray-200">
-          <span className="font-bold">👩‍🎤 주연배우 : </span>
-          {movie.actor}
+        <p className="text-gray-200 text-center font-bold italic">
+          {movie.intro}
         </p>
+        <button className="bg-white text-black m-4 p-4 mt-8 cursor-pointer rounded-lg">
+          ▶ 시청하기
+        </button>
+        <button className="text-white m-4 p-4 mt-8 cursor-pointer rounded-lg">
+          ♥ 찜하기
+        </button>
+        <button className="text-white m-4 p-4 mt-8 cursor-pointer rounded-lg">
+          공유
+        </button>
       </div>
     </div>
   );
