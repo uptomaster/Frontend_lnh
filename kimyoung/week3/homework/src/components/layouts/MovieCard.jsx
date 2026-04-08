@@ -19,7 +19,6 @@ const MovieCard = ({ movie, onOpenModal }) => {
       <hr className="my-4 border-gray-500" />
       <p className="text-gray-200 mt-1">🎭 주연배우: {actor}</p>
       <p className="text-gray-200 mt-1">🎬 감독: {director}</p>
-      {}
       <p className="text-gray-200 mt-1 leading-7 line-clamp-2">
         📝 설명: {description}
       </p>
