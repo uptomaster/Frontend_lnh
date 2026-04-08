@@ -8,7 +8,7 @@ export const FeedHeader = ({ profile, name, date }) => {
     navigate = `/profile/${name}`;
   };
   return (
-    <div className="flex-none h-[51px] flex flex-row items-center pl-[7px] pr-[18px] gap -[9px]">
+    <div className="flex-none h-[51px] flex flex-row items-center pl-[7px] pr-[18px] gap-[9px]">
       <div className="relative">
         <img
           src={OuterRing}
