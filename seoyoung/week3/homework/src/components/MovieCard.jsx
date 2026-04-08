@@ -1,7 +1,39 @@
+import { useReducer } from 'react';
+import MovieModal from './MovieModal.jsx';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'ClickMovie':
+      return {
+        ...state,
+        isClick: !state.isClick, //현재 상태의 isClick 반전
+      };
+    default:
+      return state;
+  }
+}
 const MovieCard = ({ movie }) => {
+  const [movieState, dispatch] = useReducer(reducer, {
+    ...movie,
+    isClick: false,
+  });
+
+  const onClickMovie = () => {
+    dispatch({
+      type: 'ClickMovie',
+    });
+  };
   return (
     <div>
-      <section className="w-96 h-full bg-gray-800 p-6 rounded-lg shadow m-4 ">
+      {movieState.isClick && (
+        <MovieModal movie={movie} onClose={onClickMovie} />
+      )}
+      {/*movieState.isClick이 true여야지 작동하게함, 다시 클릭하면 닫힘*/}
+      {/*이 MovieCard 는 하나의 영화만 갖고 있으므로, 각각의 영화에 따로 실행됨, map함수를 사용할 필요가 없음*/}
+      <section
+        className="w-96 h-full bg-gray-800 p-6 rounded-lg shadow m-4"
+        onClick={onClickMovie}
+      >
         <img
           src={movie.movieImage}
           alt={`${movie.title} 영화 포스터`}
