@@ -1,5 +1,4 @@
 import React from 'react';
-
 // props로 movie 객체와 함께 onClick 함수를 받아온다.
 // show라는 이름으로도 데이터를 받을 수 있게 show = movie 설정을 추가
 const MovieCard = ({ movie, show, onClick }) => {
@@ -17,7 +16,7 @@ const MovieCard = ({ movie, show, onClick }) => {
         src={
           data.image?.medium || data.poster || 'https://via.placeholder.com/210x295?text=No+Image'
         } 
-        alt={data.name || data.title} 
+        alt={data.name || data.title} //  show?image.medium : "https://static.tvmaze.com/uploads/images/medium_landscape/1/4389.jpg" 
         className="w-full h-full object-cover"
       />
 

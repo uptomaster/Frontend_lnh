@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import MovieModal from '../components/MovieModal';
+import axios from 'axios'; // axios 라이브러리 설치 후 import
+import MovieModal from '../components/MovieModal'; 
 import MovieCard from '../components/MovieCard';
-// import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/SearchBar'; 
+import useRecentShows from '../hooks/useRecentShow';
 
 const MovieList = () => {
   const [shows, setShows] = useState([]);
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [selectedShow, setSelectedShow] = useState(null);
+  const {addShow} = useRecentShows();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -24,6 +26,20 @@ const MovieList = () => {
         if (err.name !== 'CanceledError') console.error("데이터 로딩 실패:", err);
       }
     };
+
+    // useEffect(() => {
+    //   if(!trimmedQuery){
+    //     setSearchResults([]);
+    //     return;
+    //   }
+    //   const constroller = new AbortController();
+
+    //   axios.get('https://api.tvmaze.com/search/shows?q=${trimmedQuery}', {signal: constroller.signal})
+    //   .then((res) => 
+    //     setSearchResults(res.data.map((item) => {item.show})
+    //     ).catch(() => {}))
+    //   })
+
 
     fetchShows();
     return () => controller.abort();
@@ -48,16 +64,13 @@ const MovieList = () => {
   const grid = shows.slice(4, 24);
 
   const handleCardClick = (show) => {
-    // addShow(show); // 정의되지 않은 경우 에러 방지를 위해 로그로 대체하거나 주석 처리
     console.log("선택된 쇼:", show.name);
     setSelectedShow(show);
   };
 
   return (
-    // 배경과 텍스트 컬러 최적화
     <main className="min-h-screen bg-gray-950 p-6 md:p-12 space-y-12">
       
-      {/* 검색바 영역: 중앙 정렬 및 디자인 포인트 */}
       <div className="max-w-2xl mx-auto mb-10">
         <SearchBar value={query} onChange={setQuery} />
       </div>
@@ -82,7 +95,6 @@ const MovieList = () => {
         </section>
       ) : (
         <>
-          {/* Featured Section: 가로 스크롤 강조 */}
           <section>
             <h2 className="text-white text-2xl font-bold mb-6 flex items-center gap-2">
               <span className="w-1 h-6 bg-indigo-500 rounded-full"></span>
@@ -97,7 +109,6 @@ const MovieList = () => {
             </div>
           </section>
 
-          {/* All Shows Section: 깔끔한 그리드 레이아웃 */}
           <section>
             <h2 className="text-white text-2xl font-bold mb-6 flex items-center gap-2">
               <span className="w-1 h-6 bg-green-500 rounded-full"></span>
@@ -112,8 +123,12 @@ const MovieList = () => {
         </>
       )}
 
-      {/* 모달 연동: MovieCard 디자인과 통일감 유지 */}
-      <Modal show={selectedShow} onClose={() => setSelectedShow(null)} />
+      {selectedShow && (
+        <MovieModal 
+          show={selectedShow} 
+          onClose={() => setSelectedShow(null)} 
+        />
+      )}
     </main>
   );
 };

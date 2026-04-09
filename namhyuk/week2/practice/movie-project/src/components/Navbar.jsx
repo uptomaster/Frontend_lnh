@@ -1,18 +1,15 @@
+import { Link } from 'lucide-react';
 import React from 'react';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-900 text-white shadow-xl sticky top-0 z-50">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-black tracking-tighter text-indigo-400">
-          NETFLUX
-        </h1>
-        <ul className="flex gap-8 font-medium">
-          <li className="hover:text-indigo-400 cursor-pointer transition">Home</li>
-          <li className="hover:text-indigo-400 cursor-pointer transition">Movies</li>
-        </ul>
-      </div>
-    </nav>
+    <div>
+      <Link to="/Top100">Top100</Link>
+      <Link to="/Login">Login</Link>
+      <Link to="/MyPage">MyPage</Link>
+      <Link to="/NotFound">NotFound</Link>
+      <Link to="/MovieList">MovieList</Link>
+    </div>
   );
 };  
 

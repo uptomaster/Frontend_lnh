@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 
-// movie와 setModalOpen을 props로 받아온다.
-const MovieModal = ({ movie, setModalOpen }) => {
+// movie와 setModalOpen을 props로 받아온다. 
+// (MovieList에서 보낸 이름에 맞춰 show와 onClose로 연동되게 수정)
+const MovieModal = ({ show: movie, onClose: setModalOpen }) => {
   const modalRef = useRef();
 
   // 배경 스크롤 방지
@@ -28,7 +29,7 @@ const MovieModal = ({ movie, setModalOpen }) => {
       {/* max-w-2xl -> max-w-4xl로 확장, flex flex-col md:flex-row로 가로 배치 */}
       <div
         ref={modalRef}
-        className="relative w-full max-w-4xl bg-gray-900 rounded-2xl overflow-hidden shadow-2xl animate-fadeIn flex flex-col md:flex-row max-h-[90vh]"
+        className="relative w-full max-w-4xl bg-gray-950 rounded-2xl overflow-hidden shadow-2xl animate-fadeIn flex flex-col md:flex-row max-h-[90vh]"
       >
         {/* 닫기 버튼 */}
         <button
@@ -42,32 +43,38 @@ const MovieModal = ({ movie, setModalOpen }) => {
         <div className="md:w-5/12 bg-black flex items-center justify-center">
           <img
             className="w-full h-full object-contain"
-            src={movie?.poster}
-            alt={movie?.title}
+            // TVMaze API 필드(image.medium)와 기존 필드(poster) 모두 대응
+            src={movie?.image?.original || movie?.image?.medium || movie?.poster}
+            alt={movie?.name || movie?.title}
             style={{ imageRendering: '-webkit-optimize-contrast' }}
           />
         </div>
 
         {/* 오른쪽 상세 정보 영역: 내용이 길어질 경우 내부 스크롤 가능하게 처리 */}
         <div className="md:w-7/12 p-8 md:p-12 text-white overflow-y-auto">
-          <h2 className="text-4xl font-bold mb-3">{movie?.title}</h2>
+          {/* 제목: name 또는 title 대응 */}
+          <h2 className="text-4xl font-bold mb-3">{movie?.name || movie?.title}</h2>
           
+          {/* 날짜 및 장르/감독 */}
           <p className="text-indigo-400 text-lg font-semibold mb-6">
-            {movie?.releaseDate} • {movie?.director}
+            {movie?.premiered || movie?.releaseDate} • {movie?.genres?.join(', ') || movie?.director}
           </p>
 
           <div className="space-y-6">
             <div>
               <h4 className="text-gray-400 text-sm font-bold uppercase tracking-wider mb-2">줄거리</h4>
+              {/* 줄거리: summary(HTML태그제거) 또는 plot 대응 */}
               <p className="text-gray-200 leading-relaxed text-lg">
-                {movie?.plot}
+                {movie?.summary ? movie.summary.replace(/<[^>]*>?/gm, '') : movie?.plot}
               </p>
             </div>
 
             <div>
-              <h4 className="text-gray-400 text-sm font-bold uppercase tracking-wider mb-2">출연진</h4>
+              <h4 className="text-gray-400 text-sm font-bold uppercase tracking-wider mb-2">추가 정보</h4>
               <p className="text-gray-200 text-base">
-                {movie?.cast}
+                언어: {movie?.language} / 평점: ⭐ {movie?.rating?.average || 'N/A'}
+                <br />
+                {movie?.cast && `출연진: ${movie?.cast}`}
               </p>
             </div>
           </div>
