@@ -32,8 +32,8 @@ const MovieModal = ({ movie, setModalOpen }) => {
       >
         {/* 닫기 버튼 */}
         <button
-          className="absolute right-4 top-4 text-white text-2xl z-10 bg-black/40 hover:bg-black/60 transition-colors rounded-full w-10 h-10 flex items-center justify-center"
-          onClick={() => setModalOpen(false)}
+          className="cursor-pointer absolute right-4 top-4 text-white text-2xl z-10 bg-black/40 hover:bg-black/60 transition-colors rounded-full w-10 h-10 flex items-center justify-center"
+          onClick={() => setModalOpen(false) }
         >
           ✕
         </button>

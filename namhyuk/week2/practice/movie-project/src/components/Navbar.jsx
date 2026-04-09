@@ -1,5 +1,4 @@
 import React from 'react';
-// 실습 때 만들었던 노트북을 두고와서 새로만듭니다(컴포넌트 뭐있었는지 기억이 안남)
 
 const Navbar = () => {
   return (
@@ -15,6 +14,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
+};  
 
 export default Navbar;
