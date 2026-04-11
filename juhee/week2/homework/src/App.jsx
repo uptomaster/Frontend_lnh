@@ -7,6 +7,7 @@ import {Layout} from "./components/layouts/Layout"
 import movies from "./data/movie.json"
 import MovieList from "./pages/MovieList"
 
+
 function App() {
   return (
     <BrowserRouter>
