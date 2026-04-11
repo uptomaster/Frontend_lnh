@@ -1,21 +1,14 @@
 import { useEffect } from 'react';
 
 const MovieModal = ({ movie, onClose }) => {
+  if (!movie) return null;
   useEffect(() => {
-    if (!movie) {
-      document.body.style.overflow = 'auto'; // 모달 닫히면 스크롤 원상복구
-      return;
-    }
-    
-    // 모달이 열려있으면 스크롤 숨김
     document.body.style.overflow = 'hidden';
 
     return () => {
-      document.body.style.overflow = 'auto'; // 만일을 대비해 안전장치 추가
+      document.body.style.overflow = 'unset';
     };
-  }, [movie]);
-
-  if (!movie) return null;
+  }, []);
   //useEffect로 라이프사이클 실행함
   //렌더링시 마운트가 되어서, overflow 즉 스크롤이 숨겨지고,
   //언마운트(끝날 때)  unset으로 다시 되돌려 놓을 수 있음 !!
