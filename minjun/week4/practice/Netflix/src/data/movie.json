@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "movieImage": "/src/assets/dune.jpg",
+    "releaseDate": "2026년 12월 18일",
+    "actor": "티모시 샬라메, 젠데이아",
+    "title": "듄: 파트 3",
+    "director": "드니 빌뇌브",
+    "description": "티모시 샬라매가 외계 왕자인데 추방당해서 사막에 갔다가 거기 적응해서 다시 왕이되는 이야기."
+  },
+  {
+    "id": 2,
+    "movieImage": "/src/assets/oldboy.jpg",
+    "releaseDate": "2003년 11월 21일",
+    "actor": "최민식, 유지태",
+    "title": "올드보이",
+    "director": "박찬욱",
+    "description": "최민식이 영문도 모른채 갇혀서 15년동안 살다가 갑자기 해방되고 자유를 만끽하는 이야기"
+  },
+  {
+    "id": 3,
+    "movieImage": "/src/assets/django.jpg",
+    "releaseDate": "2013년 3월 21일",
+    "actor": "제이미 폭스, 크리스토프 발츠",
+    "title": "장고: 분노의 추적자",
+    "director": "쿠엔틴 타란티노",
+    "description": "제이미 폭스가 몰랐는데 사격에 엄청난 재능이 있어서 인생의 적들을 일망타진한다."
+  },
+  {
+    "id": 4,
+    "movieImage": "/src/assets/whiplash.jpg",
+    "releaseDate": "2004년 11월 26일",
+    "actor": "마일스 텔러, J. K. 시몬스",
+    "title": "위플래쉬",
+    "director": "데이미언 셔젤",
+    "description": "재능있고 노력하는 제자와 그를 사랑하는 스승의 이야기"
+  }
+]
