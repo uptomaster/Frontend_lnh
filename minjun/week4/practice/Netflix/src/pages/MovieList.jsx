@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Modal from "../components/MovieModal";
 import MovieCard from "../components/MovieCard";
-import axios from "axios";
+import axios from 'axios';
 import SearchBar from "../components/SearchBar";
 import useRecentShow from "../hooks/useRecentShow";
 
@@ -14,32 +14,34 @@ const MovieList = () => {
 
   useEffect(() => {
     const controller = new AbortController();
-    axios.get(`https://api.tvmaze.com/search/shows?q=${trimmedQuery}`,{signal:controller.signal})
-    .then((res)=>setShows(res.data))
-    .catch(()=>setShows())
-
+    axios
+    .get('https://api.tvmaze.com/shows',{signal:controller.signal})
+     .then((res) => setShows(res.data))
+    .catch(()=>{});
+    
     return () => controller.abort();
   }, []);
 
   const trimmedQuery = query.trim();
-useEffect(()=>{
-  if(!trimmedQuery){
-    setSearchResults([]);
-    return;
-  }
-  const constroller = new AbortController();
-const timer = setTimeout(()=>{
-  axios
-  .get(`https://api.tvmaze.com/search/shows?q=${trimmedQuery}`, {signal : constroller,signal})
-    .then((res)=>setSearchResults(res.data.map((item)=>item.show)));
-    .catch(()=>{});
-},400);
- // 이부분 다시 점검해야됨
-return ()=>{
-  clearTimeout(timer);
-  controller.abort();
-};
-}, [trimmedQuery]);
+
+  useEffect(() => {
+    if (!trimmedQuery) {
+      setSearchResults([]);
+      return;
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(() => {
+      axios
+        .get(`https://api.tvmaze.com/search/shows?q=${trimmedQuery}`, { signal: controller.signal })
+        .then((res) => setSearchResults(res.data.map((item) => item.show)))
+        .catch(() => {});
+    }, 400);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [trimmedQuery]);
+  
   const featured = shows.slice(0, 4);
   const grid = shows.slice(4, 20);
 
