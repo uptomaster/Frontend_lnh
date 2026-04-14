@@ -27,20 +27,6 @@ const MovieList = () => {
       }
     };
 
-    // useEffect(() => {
-    //   if(!trimmedQuery){
-    //     setSearchResults([]);
-    //     return;
-    //   }
-    //   const constroller = new AbortController();
-
-    //   axios.get('https://api.tvmaze.com/search/shows?q=${trimmedQuery}', {signal: constroller.signal})
-    //   .then((res) => 
-    //     setSearchResults(res.data.map((item) => {item.show})
-    //     ).catch(() => {}))
-    //   })
-
-
     fetchShows();
     return () => controller.abort();
   }, []);
@@ -65,6 +51,7 @@ const MovieList = () => {
 
   const handleCardClick = (show) => {
     console.log("선택된 쇼:", show.name);
+    addShow(show);
     setSelectedShow(show);
   };
 
