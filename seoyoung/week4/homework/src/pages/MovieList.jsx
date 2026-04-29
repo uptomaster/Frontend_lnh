@@ -3,6 +3,7 @@ import MovieCard from '../components/MovieCard';
 import MovieData from '../data/movie.json';
 import { useState, useEffect, useMemo } from 'react';
 import useRecentShows from '../hooks/useRecentShow';
+import SearchBar from '../components/SearchBar';
 
 const MovieList = () => {
   //TV show 목록 저장
@@ -85,6 +86,7 @@ const MovieList = () => {
 
   return (
     <div className=" flex flex-row items-stretch">
+      <SearchBar />
       {MovieData.map((movie) => (
         <MovieCard key={movie.title} movie={movie} /> // 중요!!!
       ))}
