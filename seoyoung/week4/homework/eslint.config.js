@@ -20,6 +20,7 @@ export default defineConfig([
     rules: {
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off', //얘가이젠더이상필요가없다네요...
+      'no-unused-vars': 'off',
     },
   },
 ]);
