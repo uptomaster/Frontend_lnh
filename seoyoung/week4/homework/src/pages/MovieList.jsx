@@ -1,7 +1,7 @@
 import axios from 'axios';
 import MovieCard from '../components/MovieCard';
 import MovieData from '../data/movie.json';
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import useRecentShows from '../hooks/useRecentShow';
 
 const MovieList = () => {
@@ -68,6 +68,11 @@ const MovieList = () => {
     };
   }, [trimmedQuery]);
   //검색어가 바뀔때마다 useEffect 재실행됨
+
+  //앞 0~4번째까지
+  const featured = useMemo(() => shows.slice(0, 4), [shows]);
+  //뒤 5~20번째까지 보여주기
+  const grid = useMemo(() => shows.slice(4, 20), [shows]);
 
   return (
     <div className=" flex flex-row items-stretch">
