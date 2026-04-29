@@ -86,20 +86,26 @@ const MovieList = () => {
   };
 
   return (
-    <main>
+    <main className="p-10 space-y-10">
       <SearchBar value={query} onChange={setQuery} />
 
       {/*검색어가 있으면 검색 결과를 보여주기*/}
       {trimmedQuery ? (
         <section>
-          <h2>검색결과 : &quot;{trimmedQuery}&quot;</h2>
+          <h2 className="text-white text-xl font-bold mb-4">
+            검색결과 : &quot;{trimmedQuery}&quot;
+          </h2>
           {/*검색 결과가 없을 때 출력*/}
           {searchResult.length === 0 ? (
-            <p>결과가 없습니다.</p>
+            <p className="text-gray-400">결과가 없습니다.</p>
           ) : (
-            <div>
+            <div className="grid grid-cols-6 gap-4">
               {searchResult.map((show) => (
-                <div>
+                <div
+                  key={show.id}
+                  onClick={() => handleCardClick(show)}
+                  className="cursor-pointer"
+                >
                   <MovieCard show={show} />
                 </div>
               ))}
@@ -110,11 +116,14 @@ const MovieList = () => {
         <>
           {/*Featured 영역 */}
           <section>
-            <h2>Featured</h2>
-
-            <div>
+            <h2 className="text-white text-xl font-bold mb-4">Featured</h2>
+            <div className="flex gap-6 overflow-x-auto no-scrollbar">
               {featured.map((show) => (
-                <div>
+                <div
+                  key={show.id}
+                  onClick={() => handleCardClick(show)}
+                  className="w-60 flex-shirnk-0 cursor-pointer"
+                >
                   <MovieCard show={show} />
                 </div>
               ))}
@@ -123,11 +132,15 @@ const MovieList = () => {
 
           {/*전체 Show 목록 */}
           <section>
-            <h2>All shows</h2>
+            <h2 className="text-white text-xl font-bold mb-4">All shows</h2>
 
-            <div>
+            <div className="grid gird-cols-6 gap-4">
               {grid.map((show) => (
-                <div>
+                <div
+                  key={show.id}
+                  onClick={() => handleCardClick(show)}
+                  className="cursor-pointer"
+                >
                   <MovieCard show={show} />
                 </div>
               ))}
