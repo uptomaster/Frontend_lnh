@@ -2,7 +2,7 @@ import axios from 'axios';
 import MovieCard from '../components/MovieCard';
 import MovieData from '../data/movie.json';
 import { useState, useEffect, useMemo } from 'react';
-import useRecentShows from '../hooks/useRecentShow';
+import useRecentShows from '../hooks/useRecentShows';
 import SearchBar from '../components/SearchBar';
 import MovieModal from '../components/MovieModal';
 
