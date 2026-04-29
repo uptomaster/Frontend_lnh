@@ -1,59 +1,74 @@
-import { useEffect } from 'react';
+import { X, Star, Calendar, Tv } from 'lucide-react';
 
-const MovieModal = ({ movie, onClose }) => {
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
+const MovieModal = ({ show, onClose }) => {
+  //show가 없으면 렌더링하지 않음
+  if (!show) return null;
 
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, []);
-  //useEffect로 라이프사이클 실행함
-  //렌더링시 마운트가 되어서, overflow 즉 스크롤이 숨겨지고,
-  //언마운트(끝날 때)  unset으로 다시 되돌려 놓을 수 있음 !!
-  //document.body.style.overflow => 웹페이지 전체의.몸통부분의.디자인설정에서.스크롤바를 -> 숨겨라
+  //TV MAZE API의 summary기 HTML 태그를 포함하기 때문에, 정규식을 이용해서 태그를 제거함
+  const summary = show.summary?.replace(/<[^>]+>/g, '') ?? '설명이 없습니다.';
 
   return (
-    <div
-      className="bg-black/80 p-4 z-50 flex items-center justify-center fixed inset-0"
-      onClick={onClose}
-    >
-      {/*fixed를 사용해서 그 위에 중첩되게 떠있는 화면효과 주기*/}
-      {/*inset-0 상화좌우 모든 방향의 여백을 0으로 만들기*/}
-      <div
-        className="relative bg-black p-8  max-w-md rounded-2xl"
-        onClick={
-          (e) => e.stopPropagation() //이 아래 자식 박스들은 onClick 신호가 가지 않음
-        }
-      >
+    <div onClick={onClose}>
+      {/*모달 실제 컨텐츠 영역 */}
+      <div onClick={(e) => e.stopPropagation()}>
+        {/*왼쪽 영역 : 포스터 이미지 */}
         <img
-          src={movie.movieImage}
-          alt={`${movie.title} 영화 포스터`}
-          className="w-full h-auto max-h-[65vh] rounded mb-4 aspect-[2/3] object-cover"
+          src={
+            //원본 -> 중간크기 -> 플레이스 홀더 순으로 유효한 이미지 할당
+            show.Image?.original ??
+            show.image?.medium ??
+            'http://via.placeholder.com/400x600?=No+Image'
+          }
+          alt={show.name}
         />
-        {/*화면 높이의 65%로 화면 높이 제한*/}
-        <button
-          onClick={onClose}
-          className="absolute text-white text-2xl top-1 right-2 cursor-pointer"
-        >
-          X
-        </button>
-        <h2 className="m-2 text-2xl font-semibold hover:text-purple-300">
-          {movie.title}
-        </h2>
-        <hr className="my-4" />
-        <p className="text-gray-200 text-center font-bold italic">
-          {movie.intro}
-        </p>
-        <button className="bg-white text-black m-4 p-4 mt-8 cursor-pointer rounded-lg">
-          ▶ 시청하기
-        </button>
-        <button className="text-white m-4 p-4 mt-8 cursor-pointer rounded-lg">
-          ♥ 찜하기
-        </button>
-        <button className="text-white m-4 p-4 mt-8 cursor-pointer rounded-lg">
-          공유
-        </button>
+        {/*오른쪽 영역 : 상세 정보 */}
+        <div>
+          <h2>{show.name}</h2>
+          <button onClick={onClose}>
+            <X />
+          </button>
+        </div>
+        {/*장르 뱃지 리스트 : 배열을 순회하면서 장르별로 렌더링 하도록 함*/}
+        <div>
+          {show.geres?.map((g) => (
+            <span key={g}>{g}</span>
+          ))}
+        </div>
+        {/*메타 정보 : 평점, 방영일, 방송사, 상태 정보*/}
+        <div>
+          {/*평정 정보가 있을 때만 렌더링함*/}
+          {show.rating?.average && (
+            <div>
+              <Star />
+              <span>{show.rating.average} / 10</span>
+            </div>
+          )}
+          {/*방영일 정보가 있을 때만 렌더링함*/}
+          {show.premiered && (
+            <div>
+              <Calendar />
+              <span>{show.premiered}</span>
+            </div>
+          )}
+          {/*방송사 정보가 있을 때만 렌더링*/}
+          {show.network?.name && (
+            <div>
+              <Tv />
+              <span>{show.network.name}</span>
+            </div>
+          )}
+          {/*방영 상태가 'Running'일 때만 초록색 배경으로 강조함*/}
+          {show.status && (
+            <span
+              className={`w-fit text-xs px-2 py-1 rounded-full font-semibold ${show.status === 'Running' ? 'bg-green-700 text-green-100' : 'bg-gray-700 text-gray-300'}`}
+            >
+              {show.status}
+            </span>
+          )}
+        </div>
+
+        {/*가공된 줄거리 텍스트를 출력함*/}
+        <p>{summary}</p>
       </div>
     </div>
   );
