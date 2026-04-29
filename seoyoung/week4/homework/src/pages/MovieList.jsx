@@ -1,7 +1,7 @@
 import axios from 'axios';
 import MovieCard from '../components/MovieCard';
 import MovieData from '../data/movie.json';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import useRecentShows from '../hooks/useRecentShow';
 
 const MovieList = () => {
@@ -35,7 +35,39 @@ const MovieList = () => {
 
     //컴포넌트가 사라지면 요청 취소
     return () => controller.abort();
-  });
+  }, []); //처음 한번만 실행되도록
+
+  //검색어 앞 뒤 공백 제거
+  const trimmedQuery = query.trim();
+
+  //검색어가 바뀔 때 마다 검색 API를 호출하기
+  useEffect(() => {
+    //검색어가 없으면, 검색 결과를 초기화하기
+    if (!trimmedQuery) {
+      setSearchResult([]);
+      return;
+    }
+
+    const controller = new AbortController();
+    //0.4초 기다렸다가 검색을 실행해서 타이핑할때마다 요청을 보내지는 않도록 설정
+    const timer = setTimeout(() => {
+      axios
+        //trimmedQuery 관련 show를 찾아달라
+        .get(`https://api.tvmaze.com/search/shows?q=${trimmedQuery}`, {
+          signal: controller.signal,
+        })
+        //성공하면 show를 줘라
+        .then((res) => setSearchResult(res.data.map((item) => item.show)))
+        .catch(() => {});
+    }, 400);
+
+    //검색어가 바뀌면 이전 타이머로 다시 재고 + 이전 요청 취소하기
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [trimmedQuery]);
+  //검색어가 바뀔때마다 useEffect 재실행됨
 
   return (
     <div className=" flex flex-row items-stretch">
