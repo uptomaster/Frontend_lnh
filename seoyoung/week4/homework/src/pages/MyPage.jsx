@@ -10,18 +10,23 @@ const Mypage = () => {
   const [selectedShow, setSelectedShow] = useState(null);
 
   return (
-    <main>
-      <h1>마이페이지</h1>
+    <main className="p-10 space-y-6">
+      <h1 className="text-white text-2xl font-bold">마이페이지</h1>
 
       <section>
-        <h2>최근 본 컨텐츠</h2>
+        <h2 className="text-white text-xl font-bold mb-4">최근 본 컨텐츠</h2>
         {recentShows.length === 0 ? (
-          <p>최근 본 컨텐츠가 없습니다.</p>
+          <p className="text-gray-400">최근 본 컨텐츠가 없습니다.</p>
         ) : (
-          <div>
+          <div className="grid gird-cols-6 gap-4">
+            {/*grid 기능으로 한 줄에 6개씩 배치*/}
             {/*카드를 클릭하면 해당 영화 데이터를 상태에 저장해서 Modal을 염*/}
             {recentShows.map((show) => (
-              <div key={show.id} onClick={() => setSelectedShow(show)}>
+              <div
+                key={show.id}
+                onClick={() => setSelectedShow(show)}
+                className="relative group cursor-pointer"
+              >
                 {/*개별 MovieCard를 보여줌*/}
                 <MovieCard show={show} />
                 <button
@@ -31,6 +36,7 @@ const Mypage = () => {
                     //커스텀 훅의 remove함수 실행
                     removieShow(show.id);
                   }}
+                  className="absolute top-2 right-2 bg-black/60 text-white text-xs rounded-full w-6 h-6 items-center justify-center hidden group-hover:flex"
                 >
                   X
                 </button>
