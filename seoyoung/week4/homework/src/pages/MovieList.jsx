@@ -74,6 +74,15 @@ const MovieList = () => {
   //뒤 5~20번째까지 보여주기
   const grid = useMemo(() => shows.slice(4, 20), [shows]);
 
+  //MovieCard 클릭 시 실행하는 함수
+  const handleCardClick = (show) => {
+    //최근 본 영화에 추가
+    addshow(show);
+
+    //선택된 영화 저장
+    setSelectedShow(show);
+  };
+
   return (
     <div className=" flex flex-row items-stretch">
       {MovieData.map((movie) => (
