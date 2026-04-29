@@ -4,6 +4,7 @@ import MovieData from '../data/movie.json';
 import { useState, useEffect, useMemo } from 'react';
 import useRecentShows from '../hooks/useRecentShow';
 import SearchBar from '../components/SearchBar';
+import MovieModal from '../components/MovieModal';
 
 const MovieList = () => {
   //TV show 목록 저장
@@ -85,12 +86,58 @@ const MovieList = () => {
   };
 
   return (
-    <div className=" flex flex-row items-stretch">
-      <SearchBar />
-      {MovieData.map((movie) => (
-        <MovieCard key={movie.title} movie={movie} /> // 중요!!!
-      ))}
-    </div>
+    <main>
+      <SearchBar value={query} onChange={setQuery} />
+
+      {/*검색어가 있으면 검색 결과를 보여주기*/}
+      {trimmedQuery ? (
+        <section>
+          <h2>검색결과 : &quot;{trimmedQuery}&quot;</h2>
+          {/*검색 결과가 없을 때 출력*/}
+          {searchResult.length === 0 ? (
+            <p>결과가 없습니다.</p>
+          ) : (
+            <div>
+              {searchResult.map((show) => (
+                <div>
+                  <MovieCard show={show} />
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      ) : (
+        <>
+          {/*Featured 영역 */}
+          <section>
+            <h2>Featured</h2>
+
+            <div>
+              {featured.map((show) => (
+                <div>
+                  <MovieCard show={show} />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/*전체 Show 목록 */}
+          <section>
+            <h2>All shows</h2>
+
+            <div>
+              {grid.map((show) => (
+                <div>
+                  <MovieCard show={show} />
+                </div>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
+      <MovieModal show={selectedShow} onClose={() => setSelectedShow(null)} />
+    </main>
   );
 };
 
