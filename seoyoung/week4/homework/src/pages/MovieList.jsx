@@ -1,3 +1,5 @@
+//MovieList.jsx
+
 import axios from 'axios';
 import MovieCard from '../components/MovieCard';
 import MovieData from '../data/movie.json';
@@ -20,7 +22,7 @@ const MovieList = () => {
   const [selectedShow, setSelectedShow] = useState(null);
 
   //최근 본 영화 추가해주는 함수
-  const { addshow } = useRecentShows();
+  const { addShow } = useRecentShows();
 
   //처음 페이지가 열릴 때, 전체 show의 목록들을 가져와야됨
   useEffect(() => {
@@ -79,7 +81,7 @@ const MovieList = () => {
   //MovieCard 클릭 시 실행하는 함수
   const handleCardClick = (show) => {
     //최근 본 영화에 추가
-    addshow(show);
+    addShow(show);
 
     //선택된 영화 저장
     setSelectedShow(show);
@@ -122,7 +124,7 @@ const MovieList = () => {
                 <div
                   key={show.id}
                   onClick={() => handleCardClick(show)}
-                  className="w-60 flex-shirnk-0 cursor-pointer"
+                  className="w-60 flex-shrink-0 cursor-pointer"
                 >
                   <MovieCard show={show} />
                 </div>
@@ -134,7 +136,7 @@ const MovieList = () => {
           <section>
             <h2 className="text-white text-xl font-bold mb-4">All shows</h2>
 
-            <div className="grid gird-cols-6 gap-4">
+            <div className="grid grid-cols-6 gap-4">
               {grid.map((show) => (
                 <div
                   key={show.id}

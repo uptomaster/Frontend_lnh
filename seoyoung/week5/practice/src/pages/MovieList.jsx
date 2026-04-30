@@ -136,7 +136,7 @@ const MovieList = () => {
           <section>
             <h2 className="text-white text-xl font-bold mb-4">All shows</h2>
 
-            <div className="grid grid-cols-6 gap-4">
+            <div className="grid md:grid-cols-4 lg:grid-cols-6 sm:grid-cols-3 grid-cols-2 gap-4">
               {grid.map((show) => (
                 <div
                   key={show.id}

@@ -5,7 +5,7 @@ import useRecentShows from '../hooks/useRecentShows';
 
 const Mypage = () => {
   //최근 본 데이터와 삭제함수
-  const { recentShows, removieShow } = useRecentShows();
+  const { recentShows, removeShow } = useRecentShows();
   //모달에 띄울 영화 정보를 관리하는 상태
   const [selectedShow, setSelectedShow] = useState(null);
 
@@ -18,7 +18,7 @@ const Mypage = () => {
         {recentShows.length === 0 ? (
           <p className="text-gray-400">최근 본 컨텐츠가 없습니다.</p>
         ) : (
-          <div className="grid gird-cols-6 gap-4">
+          <div className="grid grid-cols-6 gap-4">
             {/*grid 기능으로 한 줄에 6개씩 배치*/}
             {/*카드를 클릭하면 해당 영화 데이터를 상태에 저장해서 Modal을 염*/}
             {recentShows.map((show) => (
@@ -34,7 +34,7 @@ const Mypage = () => {
                     //이벤트 버블링 방지 : 버튼을 클릭햇다고 부모 div의 onClick이 실행되지 않도록 함
                     e.stopPropagation();
                     //커스텀 훅의 remove함수 실행
-                    removieShow(show.id);
+                    removeShow(show.id);
                   }}
                   className="absolute top-2 right-2 bg-black/60 text-white text-xs rounded-full w-6 h-6 items-center justify-center hidden group-hover:flex"
                 >

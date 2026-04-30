@@ -1,3 +1,5 @@
+//MovieCard.jsx
+
 const MovieCard = ({ show }) => {
   return (
     <div className="bg-gray-800 rounded-lg overflow-hidden showdow-lg w-full">

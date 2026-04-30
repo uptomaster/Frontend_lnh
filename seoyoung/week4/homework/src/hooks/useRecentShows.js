@@ -1,11 +1,13 @@
+//useRecent.jsx
+
 import { useState } from 'react';
 
 const KEY = 'recentShows';
 
 const useRecentShows = () => {
-  //최근 본 영화 목록의 상태 바앙오기
+  //최근 본 영화 목록의 상태 받아오기
   const [recentShows, setRecentShows] = useState(() => {
-    JSON.parse(localStorage.getItem(KEY) ?? '[]');
+    return JSON.parse(localStorage.getItem(KEY) ?? '[]');
     //값 없으면 빈 배열 사용
   });
 

@@ -14,16 +14,16 @@ const MovieModal = ({ show, onClose }) => {
     >
       {/*모달 실제 컨텐츠 영역 */}
       <div
-        className="bg-gray-900 rounded-2xl overflow-hidden max-w-2xl w-full shadow-2x; flex flex-col md:flex-row"
+        className="bg-gray-900 rounded-2xl overflow-hidden max-w-2xl w-full shadow-2xl flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/*왼쪽 영역 : 포스터 이미지 */}
         <img
           src={
             //원본 -> 중간크기 -> 플레이스 홀더 순으로 유효한 이미지 할당
-            show.Image?.original ??
+            show.image?.original ??
             show.image?.medium ??
-            'http://via.placeholder.com/400x600?=No+Image'
+            'http://via.placeholder.com/400x600?text=No+Image'
           }
           alt={show.name}
           className="w-full p-2 rounded-xl md:w-64 object-cover flex-shrink-0"
@@ -44,7 +44,7 @@ const MovieModal = ({ show, onClose }) => {
 
           {/*장르 뱃지 리스트 : 배열을 순회하면서 장르별로 렌더링 하도록 함*/}
           <div className="flex flex-wrap gap-2">
-            {show.geres?.map((g) => (
+            {show.genres?.map((g) => (
               <span
                 key={g}
                 className="bg-red-600 text-white text-xs px-2 py-1 rounded-full"

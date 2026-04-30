@@ -26,12 +26,12 @@ const MovieModal = ({ show, onClose }) => {
             'http://via.placeholder.com/400x600?text=No+Image'
           }
           alt={show.name}
-          className="w-full p-2 rounded-xl md:w-64 object-cover flex-shrink-0"
+          className="max-h-52 md:max-h=none w-full p-2 rounded-xl md:w-64 object-cover flex-shrink-0"
         />
         {/*오른쪽 영역 : 상세 정보 */}
-        <div className="p-6 flex flex-col gap-4 overflow-y-auto">
+        <div className="p-6 flex flex-col lg:gap-4 gap-3 overflow-y-auto">
           <div className="flex items-start justify-between gap-4">
-            <h2 className="text-white text-2xl font-bold leading-tight">
+            <h2 className="text-white md:text-2xl text-xl font-bold leading-tight">
               {show.name}
             </h2>
             <button
