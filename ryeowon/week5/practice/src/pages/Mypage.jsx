@@ -15,7 +15,7 @@ const MyPage = () => {
         {recentShows.length === 0 ? (
           <p className="text-gray-400">최근 본 컨텐츠가 없습니다</p>
         ) : (
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6  gap-4">
             {recentShows.map((show) => (
               <div
                 key={show.id}
