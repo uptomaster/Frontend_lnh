@@ -26,14 +26,14 @@ const Navbar = () => {
       </button>
 
       {isOpen && (
-        <div className='md:hidden absolute top-20 left-0 right-0 bg-black flex flex-col px-6 space-y-4"'> 
-          <Link to="/top100" onClick={()=> setIsOpen(false)}>
+        <div className='md:hidden absolute top-20 left-0 right-0 bg-black flex flex-col gap-3 px-6 py-4 space-y-4'> 
+          <Link to="/top100" onClick={()=> setIsOpen(false)}  >
             Top 100
           </Link>
-          <Link to="/mypage" onClick={()=> setIsOpen(false)}>
+          <Link to="/mypage" onClick={()=> setIsOpen(false)}  >
             My Page
           </Link>
-          <Link to="/login" onClick={()=> setIsOpen(false)}>
+          <Link to="/login" onClick={()=> setIsOpen(false)} >
             Login
           </Link>
         </div>

@@ -16,8 +16,8 @@ const Modal = ({ movie, onClose }) => {
     }, []);
 
   return (
-    <div onClick={onClose} className=" fixed inset-0 flex items-center justify-center bg-black/80 ">
-        <div onClick={(e) => e.stopPropagation()} className="relative w-[800px] flex bg-gray-800 rounded-lg p-6 gap-[10px] ">
+    <div onClick={onClose} className=" fixed inset-0 flex items-center justify-center bg-black/80 p-4">
+        <div onClick={(e) => e.stopPropagation()} className="relative w-full max-w-[800px] max-h-[80vh] overflow-y-auto flex bg-gray-800 rounded-lg p-6 gap-[10px] ">
             <button onClick={onClose} className=" cursor-pointer absolute top-[7px] right-[7px] hover:scale-130  ">
                 <img src={out} className='h-[50px] w-[50px]' />
             </button>
@@ -27,12 +27,12 @@ const Modal = ({ movie, onClose }) => {
                 movie.image?.medium ?? 
                 'https://via.placeholder.com/400x600?text=No+Image'
               } 
-              alt={movie.name} className="max-h-52 md:max-h-nonew-[300px] rounded mb-4 mx-auto"/>
+              alt={movie.name} className="max-h-52 md:max-h-none w-[300px] rounded mb-4 mx-auto"/>
             <div>
-              <h2 className="text-2xl font-semibold">{movie.name}</h2>
+              <h2 className="text-2xl pr-10 font-semibold">{movie.name}</h2>
               <hr className="my-4" />
             
-              <p className="text-gray-200 mb-[30px] ">📝 줄거리: {summary}</p>
+              <p className="text-gray-200 mb-[30px] line-clamp-5 md:line-clamp-10 ">📝 줄거리: {summary}</p>
               <p className="text-gray-400 text-xs mt-1 truncate">
                    장르 : {movie.genres?.join(', ')}
               </p>
