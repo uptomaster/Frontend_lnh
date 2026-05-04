@@ -1,7 +1,7 @@
-import NavBar from "@/components/NavBar";
-import SearchSection from "@/components/SearchSection";
-import InfoSection from "@/components/InfoSection";
-import StaySection from "@/components/StaySection";
+import NavBar from "./components/layout/Navbar";
+import SearchSection from "./components/search/SearchSection";
+import InfoSection from "./components/info/InfoSection";
+import StaySection from "./components/stay/StaySection";
 
 function App() {
   return (
