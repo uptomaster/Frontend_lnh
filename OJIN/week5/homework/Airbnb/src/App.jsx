@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <main>
+      <main className="mx-auto flex w-full max-w-[1440px] flex-col">
         <SearchSection />
         <InfoSection />
         <StaySection />
