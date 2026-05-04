@@ -5,28 +5,32 @@ import Lodging4 from "../assets/lodging4.png";
 
 const stays = [
   {
-    Image: Lodging1,
+    id: 1,
+    image: Lodging1,
     title: "양천구의 집",
     beds: "침대 4개",
     dates: "6월 7일~12일",
     prices: "₩559,160",
   },
   {
-    Image: Lodging2,
+    id: 2,
+    image: Lodging2,
     title: "강동구의 집",
     beds: "퀸사이즈 침대 2개",
     dates: "5월 31일 ~ 6월 5일",
     prices: "₩442,929",
   },
   {
-    Image: Lodging3,
+    id: 3,
+    image: Lodging3,
     title: "강동구의 집",
     beds: "퀸사이즈 침대 3개",
     dates: "6월 21일~26일",
     prices: "₩759,160",
   },
   {
-    Image: Lodging4,
+    id: 4,
+    image: Lodging4,
     title: "가산동의 집",
     beds: "침대 3개",
     dates: "6월 7일~12일",
