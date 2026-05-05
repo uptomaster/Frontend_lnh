@@ -1,5 +1,81 @@
+import firstImage from '../assets/PlaceImage/first.png';
+import secondImage from '../assets/PlaceImage/second.png';
+import thirdImage from '../assets/PlaceImage/third.png';
+import fourthImage from '../assets/PlaceImage/fourth.png';
+import PlaceItem from './PlaceItem';
+import MoreButton from './MoreButton';
+
 const PlaceCard = () => {
-  return <div>숙소 Card</div>;
+  const Data = [
+    {
+      image: firstImage,
+      geustFavorite: false,
+      title: '서울의 집',
+      star: '신규',
+      description: 'Yuo Stay/코지하우스/등촌역6분/염창역근처/쌈!',
+      bed: '침대 3개',
+      date: '4월23일~28일',
+      price: '918,647',
+    },
+    {
+      image: secondImage,
+      geustFavorite: true,
+      title: '서울의 집',
+      star: '4.77 (13)',
+      description: 'Hail602/신축/Residence/성수/건국,세종&숭실대 근처',
+      bed: '퀸사이즈침대 1개',
+      date: '5월 6일~11일',
+      price: '621,941',
+    },
+    {
+      image: thirdImage,
+      geustFavorite: true,
+      title: '군자동의 아파트',
+      star: '신규',
+      description: '[NEW 오픈특가] 신당역 5분/2룸 3침대',
+      bed: '퀸사이즈 침대 3개',
+      date: '4월 13일~18일',
+      price: '1,064,478',
+    },
+    {
+      image: fourthImage,
+      geustFavorite: true,
+      title: '송파1동의 아파트',
+      star: '5.0 (10)',
+      description: '무료짐보관/송파나루5분/석촌역7분/역세권',
+      bed: '침대 3개',
+      date: '6월 7일~12일',
+      price: '553,471',
+    },
+  ];
+
+  return (
+    <div className="m-[50px] mr-[150px] ml-[150px] flex flex-col">
+      <div className="p-4 mb-3">
+        <h1 className="text-[30px] font-bold">서울의 게스트 선호 숙소</h1>
+        <p>
+          평점, 후기, 신뢰도를 바탕으로 에어비앤비에서 가장 사랑받는 숙소로
+          손꼽히는 곳입니다.
+        </p>
+      </div>
+      <div className="grid grid-cols-4 gap-10">
+        {Data.map((item, index) => (
+          <PlaceItem
+            key={index}
+            image={item.image}
+            geustFavorite={item.geustFavorite}
+            star={item.star}
+            title={item.title}
+            description={item.description}
+            bed={item.bed}
+            date={item.date}
+            price={item.price}
+          />
+        ))}
+      </div>
+      <MoreButton />
+    </div>
+  );
 };
 
 export default PlaceCard;
