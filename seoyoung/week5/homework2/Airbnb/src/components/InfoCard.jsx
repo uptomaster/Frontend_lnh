@@ -26,10 +26,16 @@ const InfoCard = () => {
 
   return (
     <div className="m-[50px] flex flex-col gap-20">
-      <div className="flex justify-between items-center">
-        <SearchCard />
-        <div>
-          <img src={Infoimage} alt="Info" className="h-100 rounded-2xl" />
+      <div className="relative w-full max-w-[2000px] mx-auto m-10">
+        <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20 w-[500px]">
+          <SearchCard />
+        </div>
+        <div className="flex justify-end">
+          <img
+            src={Infoimage}
+            alt="Info"
+            className="w-[70%] h-[600px] rounded-2xl object-cover "
+          />
         </div>
       </div>
       <div className="grid grid-cols-3 gap-8">
