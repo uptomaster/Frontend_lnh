@@ -1,3 +1,5 @@
+//MovieModal.jsx
+
 import { X, Star, Calendar, Tv } from 'lucide-react';
 
 const MovieModal = ({ show, onClose }) => {

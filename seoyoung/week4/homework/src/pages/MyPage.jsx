@@ -1,3 +1,5 @@
+//MyPage.jsx
+
 import { useState } from 'react';
 import MovieModal from '../components/MovieModal';
 import MovieCard from '../components/MovieCard';
