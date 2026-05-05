@@ -25,8 +25,8 @@ const InfoCard = () => {
   ];
 
   return (
-    <div className="m-[50px] flex flex-col gap-20">
-      <div className="relative w-full max-w-[2000px] mx-auto m-10">
+    <div className="m-[50px] mr-[150px] ml-[150px] flex flex-col gap-20">
+      <div className="relative w-full max-w-[2000px] mx-auto">
         <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20 w-[500px]">
           <SearchCard />
         </div>
