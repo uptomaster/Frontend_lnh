@@ -225,3 +225,35 @@ body {
   background: white;
   cursor: pointer;
 }
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 0 20px 40px;
+  }
+
+  .hero-section {
+    flex-direction: column;
+  }
+  .hero-image,
+  .features-section {
+    display: none;
+  } /* 모바일 불필요 요소 제거 */
+
+  .search-box {
+    position: static;
+    width: 100%;
+    padding: 20px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .footer-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
