@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+}
 body {
   margin: 0;
 }
@@ -65,6 +76,7 @@ body {
   margin-bottom: 16px;
 }
 
+/* 서울 숙소 찾기 카드를 표로 만들었음 */
 .input-row,
 .input-col {
   padding: 12px;
@@ -144,7 +156,7 @@ body {
 .card-image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1; /* 정사각형 비율 강제 */
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 12px;
@@ -154,8 +166,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block; /* 사진 밑에 생기는 미세한 빈칸 제거 */
 }
-
 .heart-icon {
   position: absolute;
   top: 10px;
@@ -246,14 +258,17 @@ body {
     box-shadow: none;
     border: 1px solid #ddd;
   }
-
+  /* 사진 크기 똑같게 설정 */
   .grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px;
+    width: 100%;
   }
 
-  .footer-actions {
-    flex-direction: column;
-    gap: 15px;
+  /* 글이 길어서 칸이 늘어나는 것 방지 */
+  /* 이것 때문에 계속 모바일에서 사진 크기 제어가 안됐었음 */
+  .airbnb-card {
+    min-width: 0;
   }
 }
