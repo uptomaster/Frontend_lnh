@@ -31,7 +31,7 @@ const Home = () => {
 
         <section className="pt-[64px] pl-[80px] pr-[80px]">
           <h3 className="text-[32px]">서울의 게스트 선호 숙소</h3>
-          <p className="text-[18px]">평점, 후기, 신뢰도를 바탕으로 에어비앤비에서 가장 사랑받는 숙소로 손꼽히는 곳입니다.</p>
+          <p className="text-[18px] pb-[24px]">평점, 후기, 신뢰도를 바탕으로 에어비앤비에서 가장 사랑받는 숙소로 손꼽히는 곳입니다.</p>
           <div className="flex gap-[24px] justify-center">
             {hotelList1.map((hotel) => (
               <HotelCard
@@ -49,7 +49,7 @@ const Home = () => {
 
         <section className="pt-[64px] pl-[80px] pr-[80px]">
           <h3 className="text-[32px]">넓은 공간을 갖춘 숙소</h3>
-          <p className="text-[18px]">꿈에 그리던 휴가를 위한 편안한 독채 숙소를 찾아보세요.</p>
+          <p className="text-[18px] pb-[24px]">꿈에 그리던 휴가를 위한 편안한 독채 숙소를 찾아보세요.</p>
           <div className="flex gap-[24px] justify-center">
             {hotelList2.map((hotel) => (
               <HotelCard

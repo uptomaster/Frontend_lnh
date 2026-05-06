@@ -1,7 +1,7 @@
-import hotel1 from '../assets/hero.png';
-import hotel2 from '../assets/hero.png';
-import hotel3 from '../assets/hero.png';
-import hotel4 from '../assets/hero.png';
+import hotel1 from '../assets/image01.png';
+import hotel2 from '../assets/image02.png';
+import hotel3 from '../assets/image03.png';
+import hotel4 from '../assets/image04.png';
 
 const hotelList = [
   {
