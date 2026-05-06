@@ -1,26 +1,23 @@
 const HotelCard = ({ image, title, rating, description, bed, date, price }) => {
   return (
-    <section className="airbnb_content">
-      
-        <img src={image} className="w-[230px]"/>
-    
+    <section className="">
+      <img src={image} className="" />
 
-      <p>
-        {title}
-        <span className="rating">{rating}</span>
-        <br />
-        <span className="explain_gray">
-          {description}
-          <br />
-          {bed}
-          <br />
-          {date}
-        </span>
-      </p>
+      <div className="">
+        <div className="flex justify-between items-center">
+          <p className="">{title}</p>
+          <p className="">{rating}</p>
+        </div>
 
-      <span className="total_price">
-        총액 <span className="price">{price}</span>
-      </span>
+        <p className="">{description}</p>
+        <p className="">{bed}</p>
+        <p className="">{date}</p>
+      </div>
+
+      <div className="">
+        <p className="">총액</p>
+        <p className="">{price}</p>
+      </div>
     </section>
   );
 };
