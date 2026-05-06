@@ -34,7 +34,7 @@ const InfoCard = () => {
             className="w-full md:w-[75%] h-[300px] md:h-[500px] rounded-2xl object-cover "
           />
         </div>
-        <div className="w-full md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:z-20 md:w-[450px] lg:w-[500px]">
+        <div className="w-full flex justify-center md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:z-20 md:w-[450px] lg:w-[500px]">
           <SearchCard />
         </div>
       </div>
