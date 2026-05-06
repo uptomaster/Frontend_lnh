@@ -1,0 +1,15 @@
+.sticker {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+
+  background-color: #fcfcfc;
+  border-radius: 50px;
+
+  box-sizing: border-box;
+}

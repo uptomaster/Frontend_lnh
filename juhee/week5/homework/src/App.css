@@ -1,0 +1,44 @@
+.main {
+  margin: 40px 40px;
+}
+
+.textCardList {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.bottomText {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 96px;
+  width: 100%;
+  line-height: 20.02px;
+  text-align: start;
+}
+
+.bottomText h2 {
+  box-sizing: border-box;
+  display: block;
+  height: 44px;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: normal;
+  line-height: 36px;
+  text-align: start;
+  margin-bottom: 0%;
+}
+
+.imageCardList {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.buttonList {
+  display: flex;
+  gap: 20px;
+}
