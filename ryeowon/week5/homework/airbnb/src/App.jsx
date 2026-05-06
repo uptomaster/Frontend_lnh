@@ -1,10 +1,11 @@
-import SearchBox from './components/SearchBox/SearchBox'
+import Layout from './components/Layout'
+
 
 function App() {
 
   return (
     <>
-      <SearchBox />
+      <Layout />
     </>
   )
 }
