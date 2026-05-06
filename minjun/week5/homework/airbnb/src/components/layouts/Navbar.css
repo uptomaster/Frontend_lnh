@@ -1,0 +1,29 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid #ebebeb;
+  z-index: 100;
+  padding: 15px 80px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-menu button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-menu button:hover {
+  background-color: #fcf7f7;
+  border-radius: 20px;
+}
