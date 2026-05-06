@@ -82,7 +82,7 @@ const PlaceCard = () => {
   };
 
   return (
-    <div className="m-[50px] mr-[150px] ml-[150px] flex flex-col gap-5">
+    <div className="m-[50px] lg:mx-[150px] flex flex-col gap-5 md:m-[50px]">
       <div className="p-4 mb-3">
         <h1 className="text-[30px] font-bold">서울의 게스트 선호 숙소</h1>
         <p>
@@ -90,19 +90,23 @@ const PlaceCard = () => {
           손꼽히는 곳입니다.
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10">
         {state.map((item, index) => (
-          <PlaceItem
+          <div
             key={index}
-            image={item.image}
-            geustFavorite={item.geustFavorite}
-            star={item.star}
-            title={item.title}
-            description={item.description}
-            bed={item.bed}
-            date={item.date}
-            price={item.price}
-          />
+            className={index === 3 ? 'md:hidden lg:block' : 'block'}
+          >
+            <PlaceItem
+              image={item.image}
+              geustFavorite={item.geustFavorite}
+              star={item.star}
+              title={item.title}
+              description={item.description}
+              bed={item.bed}
+              date={item.date}
+              price={item.price}
+            />
+          </div>
         ))}
       </div>
       <div className="flex justify-between">

@@ -11,7 +11,7 @@ const PlaceItem = ({
   return (
     <div className="flex flex-col gap-3 w-full">
       <div className="relative">
-        <div className="absolute shadow-xl top-3 left-3 bg-white z-10 px-2 py-1 rounded-2xl">
+        <div className="absolute font-bold shadow-xl top-3 left-3 bg-white z-10 px-2 py-1 rounded-2xl text-[12px] md:text-[10px] lg:text-[13px]">
           {geustFavorite ? '🏆 게스트 선호' : ' 게스트 선호'}
         </div>
 
