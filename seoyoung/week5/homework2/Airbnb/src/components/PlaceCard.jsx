@@ -86,7 +86,7 @@ const PlaceCard = () => {
   };
 
   return (
-    <div className="mt-[150px] md:mx-[50px] lg:mx-[200px] flex flex-col gap-1 md:mx-[30px]">
+    <div className="mt-[150px] mx-[30px] md:mx-[50px] lg:mx-[200px] flex flex-col gap-1">
       <div className=" mb-2">
         <h1 className="text-[30px] font-bold">서울의 게스트 선호 숙소</h1>
         <p>
