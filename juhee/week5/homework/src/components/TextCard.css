@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   height: 126px;
-  width: 281.328px;
+  width: 100%;
 }
 
 h2 {
@@ -24,4 +24,12 @@ h2 {
   line-height: 28px;
   text-align: start;
   color: rgb(34, 34, 34);
+}
+
+@media (max-width: 768px) {
+  .TextCard > h2,
+  .TextCard > .text {
+    display: flex;
+    width: 100%;
+  }
 }

@@ -8,6 +8,15 @@
   margin-bottom: 100px;
 }
 
+@media (max-width: 768px) {
+  .textCardList {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+}
+
 .bottomText {
   align-items: flex-start;
   box-sizing: border-box;
