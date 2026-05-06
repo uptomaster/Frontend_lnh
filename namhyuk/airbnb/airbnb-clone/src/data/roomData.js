@@ -7,7 +7,7 @@ export const initialRooms = [
     details: "침대 2개",
     date: "4월 23일~28일",
     price: 918077,
-    img: "/images/room1.avif",
+    img: "/room1.avif",
     tag: "게스트 선호"
   },
   {
@@ -18,7 +18,7 @@ export const initialRooms = [
     details: "침대 4개",
     date: "4월 13일~18일",
     price: 587706,
-    img: "/images/room2.avif",
+    img: "/room2.avif",
     tag: "게스트 선호"
   },
   {
@@ -29,7 +29,7 @@ export const initialRooms = [
     details: "침대 1개",
     date: "5월 8일~13일",
     price: 456471,
-    img: "/images/room3.avif",
+    img: "/room3.avif",
     tag: "게스트 선호"
   },
   {
@@ -40,7 +40,7 @@ export const initialRooms = [
     details: "침대 3개",
     date: "4월 30일~5월 5일",
     price: 748612,
-    img: "/images/room4.avif",
+    img: "/room4.avif",
     tag: "게스트 선호"
   }
 ];
