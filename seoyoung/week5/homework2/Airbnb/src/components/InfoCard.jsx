@@ -38,7 +38,7 @@ const InfoCard = () => {
           <SearchCard />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {Data.map((item, index) => (
           <InfoItem
             key={index}

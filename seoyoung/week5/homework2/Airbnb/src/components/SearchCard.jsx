@@ -47,7 +47,7 @@ const SearchCard = () => {
         </div>
       </div>
       <div>
-        <button className="w-full p-3 rounded-xl text-center text-white font-bold bg-rose-500">
+        <button className="w-full p-3 rounded-xl text-center text-white font-bold bg-rose-500 cursor-pointer">
           검색하기
         </button>
       </div>
