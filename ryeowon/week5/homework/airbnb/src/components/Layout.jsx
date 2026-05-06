@@ -2,9 +2,11 @@ import Navbar from './Navbar'
 import SearchBox from './SearchBox/SearchBox'
 import mainImg from '../assets/mainimg.png'
 import Information from './Information'
+import Hotel from './Hotel/Hotel'
 import info1 from '../assets/info1.png'
 import info2 from '../assets/info2.png'
 import info3 from '../assets/info3.png'
+
 
 function Layout() {
     const infos = [
@@ -39,12 +41,15 @@ function Layout() {
                     </div>
                 </div>
             </div>
-            <div className="py-[48px]">
-                <div className="max-w-[1280px] mx-auto flex gap-[48px]">
+            <div className="pt-[100px] pb-[70px]">
+                <div className="max-w-[1280px] mx-auto flex gap-[48px]"> {/* 이 div의 최대 넓이를 1280px로 제한하고, 이 div를 화면 가운데에 배치하고, 그 안의 아이템들을 가로로 정렬하고 그 간격을 48px로 설정*/}
                     {infos.map((item)=> (
-                        <Information key={item.id} {...item} />
+                        <Information {...item} />
                     ))}
                 </div>
+            </div>
+            <div>
+                <Hotel title="서울의 게스트 선호 숙소" info="평점, 후기, 신뢰도를 바탕으로 에어비앤비에서 가장 사랑받는 숙소로 손꼽히는 곳입니다."/>
             </div>
         </div>
     )
