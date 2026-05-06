@@ -29,9 +29,9 @@ const PlaceItem = ({
       </div>
 
       <div>
-        <p className=" truncate text-[15px] text-gray-700">{description}</p>
-        <p className=" text-[15px] text-gray-700">{bed}</p>
-        <p className=" text-[15px] text-gray-700">{date}</p>
+        <p className="truncate text-[15px] text-gray-700">{description}</p>
+        <p className="text-[15px] text-gray-700">{bed}</p>
+        <p className="text-[15px] text-gray-700">{date}</p>
       </div>
       <p className="text-[15px] text-black font-medium">
         총액{' '}

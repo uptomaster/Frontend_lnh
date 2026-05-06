@@ -94,7 +94,7 @@ const PlaceCard = () => {
           손꼽히는 곳입니다.
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-9">
         {state.map((item, index) => (
           <div
             key={index}
