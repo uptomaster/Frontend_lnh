@@ -18,7 +18,8 @@ const PlaceCard = () => {
       description: 'Yuo Stay/코지하우스/등촌역6분/염창역근처/쌈!',
       bed: '침대 3개',
       date: '4월23일~28일',
-      price: '918,647',
+      lastprice: '918,647',
+      price: '818,747',
     },
     {
       id: 2,
@@ -29,6 +30,7 @@ const PlaceCard = () => {
       description: 'Hail602/신축/Residence/성수/건국,세종&숭실대 근처',
       bed: '퀸사이즈침대 1개',
       date: '5월 6일~11일',
+      lastprice: '621,941',
       price: '621,941',
     },
     {
@@ -40,7 +42,8 @@ const PlaceCard = () => {
       description: '[NEW 오픈특가] 신당역 5분/2룸 3침대',
       bed: '퀸사이즈 침대 3개',
       date: '4월 13일~18일',
-      price: '1,064,478',
+      lastprice: '1,064,478',
+      price: '818,747',
     },
     {
       image: fourthImage,
@@ -50,7 +53,8 @@ const PlaceCard = () => {
       description: '무료짐보관/송파나루5분/석촌역7분/역세권',
       bed: '침대 3개',
       date: '6월 7일~12일',
-      price: '553,471',
+      lastprice: '553,471',
+      price: '418,788',
     },
   ]);
 
@@ -82,8 +86,8 @@ const PlaceCard = () => {
   };
 
   return (
-    <div className="m-[30px] md:mx-[50px] lg:mx-[150px] flex flex-col gap-5 md:mx-[30px]">
-      <div className="p-4 mb-3">
+    <div className="mt-[150px] md:mx-[50px] lg:mx-[200px] flex flex-col gap-1 md:mx-[30px]">
+      <div className=" mb-2">
         <h1 className="text-[30px] font-bold">서울의 게스트 선호 숙소</h1>
         <p>
           평점, 후기, 신뢰도를 바탕으로 에어비앤비에서 가장 사랑받는 숙소로
@@ -110,6 +114,7 @@ const PlaceCard = () => {
               description={item.description}
               bed={item.bed}
               date={item.date}
+              lastprice={item.lastprice}
               price={item.price}
             />
           </div>

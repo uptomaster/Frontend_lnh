@@ -7,6 +7,7 @@ const PlaceItem = ({
   bed,
   date,
   price,
+  lastprice,
 }) => {
   return (
     <div className="flex flex-col gap-3 w-full">
@@ -32,7 +33,19 @@ const PlaceItem = ({
         <p className=" text-[15px] text-gray-700">{bed}</p>
         <p className=" text-[15px] text-gray-700">{date}</p>
       </div>
-      <p className="text-[15px]">총액 \ {price}</p>
+      <p className="text-[15px] text-black font-medium">
+        총액{' '}
+        {lastprice === price ? (
+          <span>\{price}</span>
+        ) : (
+          <span>
+            <sapn className="text-[15px] text-gray-400 line-through">
+              \{lastprice}
+            </sapn>{' '}
+            \{price}
+          </span>
+        )}
+      </p>
     </div>
   );
 };
