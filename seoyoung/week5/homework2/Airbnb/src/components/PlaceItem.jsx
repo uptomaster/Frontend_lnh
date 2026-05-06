@@ -24,7 +24,7 @@ const PlaceItem = ({
         <h3 className="font-bold text-[17px] text-gray-700 truncate">
           {title}
         </h3>
-        <p className=" text-[15px] text-gray-700">★ {star}</p>
+        <p className="text-[15px] text-gray-700">★ {star}</p>
       </div>
 
       <div>
@@ -32,7 +32,7 @@ const PlaceItem = ({
         <p className=" text-[15px] text-gray-700">{bed}</p>
         <p className=" text-[15px] text-gray-700">{date}</p>
       </div>
-      <p className="text-black text-[15px]">총액 : {price}</p>
+      <p className="text-[15px]">총액 \ {price}</p>
     </div>
   );
 };

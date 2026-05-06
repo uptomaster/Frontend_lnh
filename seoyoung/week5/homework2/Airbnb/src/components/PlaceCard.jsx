@@ -4,10 +4,13 @@ import thirdImage from '../assets/PlaceImage/third.png';
 import fourthImage from '../assets/PlaceImage/fourth.png';
 import PlaceItem from './PlaceItem';
 import MoreButton from './MoreButton';
+import PriceButton from './PriceButton';
+import { useState } from 'react';
 
 const PlaceCard = () => {
-  const Data = [
+  const [state, setState] = useState([
     {
+      id: 1,
       image: firstImage,
       geustFavorite: false,
       title: '서울의 집',
@@ -18,6 +21,7 @@ const PlaceCard = () => {
       price: '918,647',
     },
     {
+      id: 2,
       image: secondImage,
       geustFavorite: true,
       title: '서울의 집',
@@ -28,6 +32,7 @@ const PlaceCard = () => {
       price: '621,941',
     },
     {
+      id: 3,
       image: thirdImage,
       geustFavorite: true,
       title: '군자동의 아파트',
@@ -47,10 +52,37 @@ const PlaceCard = () => {
       date: '6월 7일~12일',
       price: '553,471',
     },
-  ];
+  ]);
+
+  const onIncreaseClick = () => {
+    setState(
+      state.map((p) => {
+        const numberPrice = Number(p.price.replaceAll(',', ''));
+        return {
+          ...p,
+          price: (numberPrice + 10000).toLocaleString(),
+        };
+      })
+    );
+  };
+
+  const onDecreaseClick = () => {
+    setState(
+      state.map((p) => {
+        const numberPrice = Number(p.price.replaceAll(',', ''));
+        return {
+          ...p,
+          price:
+            numberPrice - 10000 > 0
+              ? (numberPrice - 10000).toLocaleString()
+              : p.price,
+        };
+      })
+    );
+  };
 
   return (
-    <div className="m-[50px] mr-[150px] ml-[150px] flex flex-col">
+    <div className="m-[50px] mr-[150px] ml-[150px] flex flex-col gap-5">
       <div className="p-4 mb-3">
         <h1 className="text-[30px] font-bold">서울의 게스트 선호 숙소</h1>
         <p>
@@ -59,7 +91,7 @@ const PlaceCard = () => {
         </p>
       </div>
       <div className="grid grid-cols-4 gap-10">
-        {Data.map((item, index) => (
+        {state.map((item, index) => (
           <PlaceItem
             key={index}
             image={item.image}
@@ -73,7 +105,13 @@ const PlaceCard = () => {
           />
         ))}
       </div>
-      <MoreButton />
+      <div className="flex justify-between">
+        <MoreButton />
+        <div className="flex gap-5">
+          <PriceButton label="+" onClick={onIncreaseClick} />
+          <PriceButton label="-" onClick={onDecreaseClick} />
+        </div>
+      </div>
     </div>
   );
 };
