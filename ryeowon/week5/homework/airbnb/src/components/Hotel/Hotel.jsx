@@ -1,5 +1,5 @@
+import { useState } from "react";
 import HotelCard from "./HotelCard";
-import Button from "./Button";
 import home1 from "../../assets/home1.jpeg";
 import home2 from "../../assets/home2.jpeg";
 import home3 from "../../assets/home3.jpeg";
@@ -65,6 +65,17 @@ function Hotel({ title, info }) {
     },
   ];
 
+  const [prices, setPrices] = useState(
+    hotels.map((item) => Number(item.total.replaceAll(",", ""))),
+  );
+
+  const onClickPlus = () => {
+    setPrices(prices.map((price) => price + 10000));
+  };
+
+  const onClickMinus = () => {
+      setPrices(prices.map((price) => Math.max(price - 10000, 0)));
+  };
 
   return (
     <div className="py-[50px]">
@@ -73,11 +84,37 @@ function Hotel({ title, info }) {
         <div className="text-[18px] font-light pb-[24px]">{info}</div>
 
         <div className="grid grid-cols-4 gap-[24px]">
-          {hotels.map((item) => (
-            <HotelCard key={item.id} {...item} />
+          {hotels.map((item, index) => (
+            <HotelCard key={item.id} {...item} price={prices[index]} />
           ))}
         </div>
-        <Button total={hotels.map((item)=>item.total)} />
+        <div>
+          <div className="my-[20px]">
+            <a
+              href="#"
+              className="border border-gray-800 rounded-lg px-[20px] py-[11px] inline-flex items-center justify-center"
+            >
+              {" "}
+              더 찾아보기{" "}
+            </a>
+            <button
+              id="plus"
+              className="mx-[25px] cursor-pointer"
+              onClick={onClickPlus}
+            >
+              {" "}
+              +{" "}
+            </button>
+            <button
+              id="minus"
+              className="mx-[8px] cursor-pointer"
+              onClick={onClickMinus}
+            >
+              {" "}
+              –{" "}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
