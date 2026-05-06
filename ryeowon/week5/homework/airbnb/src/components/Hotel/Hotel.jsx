@@ -79,11 +79,11 @@ function Hotel({ title, info }) {
 
   return (
     <div className="py-[50px]">
-      <div className="max-w-[1280px] mx-auto">
+      <div className="max-w-[1280px] mx-auto px-[16px] xl:px-0">
         <h2 className="text-[32px]">{title}</h2>
         <div className="text-[18px] font-light pb-[24px]">{info}</div>
 
-        <div className="grid grid-cols-4 gap-[24px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[24px]">
           {hotels.map((item, index) => (
             <HotelCard key={item.id} {...item} price={prices[index]} />
           ))}

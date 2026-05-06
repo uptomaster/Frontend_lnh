@@ -20,14 +20,14 @@ function LocationInput() {
   };
 
   return (
-    <div className="w-[354px] py-[9px] px-[16px] border border-gray-300 rounded-xl my-2 flex-1 flex flex-col justify-center">
+    <div className="w-full py-[9px] px-[16px] border border-gray-300 rounded-xl my-2 flex-1 flex flex-col justify-center">
       <label className="text-[12px]">위치</label>
 
       <input
         type="text"
         placeholder="근처 추천 장소"
         onChange={onChange}
-        className="w-[322px] h-[24px]"
+        className="w-full h-[24px]"
       />
 
       <ul>

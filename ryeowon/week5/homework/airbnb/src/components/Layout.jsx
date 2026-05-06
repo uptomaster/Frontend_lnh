@@ -33,16 +33,16 @@ function Layout() {
     return (
         <div>
             <Navbar />
-            <div className="w-[1710-px] h-[560px]">
-                <div className="relative w-[1440px] mx-[135px] pt-[48px] px-[80px]">
-                    <img className="absolute right-20 w-[960px] h-[512px] object-cover rounded-[24px]" alt="청계천 사진" src={mainImg} />
-                    <div className="absolute top-[85px] w-[420px] bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
+            <div className="w-full xl:w-[1710px] h-auto sm:h-[560px]">
+                <div className="relative w-full xl:w-[1440px] xl:mx-[135px] pt-[48px] px-[16px] xl:px-[80px]">
+                    <img className="hidden sm:block absolute right-20 w-[960px] h-[512px] object-cover rounded-[24px]" alt="청계천 사진" src={mainImg} />
+                    <div className="relative sm:absolute top-0 sm:top-[85px] w-full sm:w-[420px] bg-white rounded-3xl sm:shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
                         <SearchBox />
                     </div>
                 </div>
             </div>
-            <div className="pt-[100px] pb-[70px]">
-                <div className="max-w-[1280px] mx-auto flex gap-[48px]"> {/* 이 div의 최대 넓이를 1280px로 제한하고, 이 div를 화면 가운데에 배치하고, 그 안의 아이템들을 가로로 정렬하고 그 간격을 48px로 설정*/}
+            <div className="pt-[40px] sm:pt-[100px] pb-[40px] sm:pb-[70px]">
+                <div className="max-w-[1280px] mx-auto flex flex-col sm:flex-row gap-[24px] sm:gap-[48px] px-[16px] xl:px-0"> {/* 이 div의 최대 넓이를 1280px로 제한하고, 이 div를 화면 가운데에 배치하고, 그 안의 아이템들을 가로로 정렬하고 그 간격을 48px로 설정*/}
                     {infos.map((item)=> (
                         <Information {...item} />
                     ))}
