@@ -82,7 +82,7 @@ const PlaceCard = () => {
   };
 
   return (
-    <div className="m-[50px] lg:mx-[150px] flex flex-col gap-5 md:m-[50px]">
+    <div className="m-[30px] md:mx-[50px] lg:mx-[150px] flex flex-col gap-5 md:mx-[30px]">
       <div className="p-4 mb-3">
         <h1 className="text-[30px] font-bold">서울의 게스트 선호 숙소</h1>
         <p>
@@ -94,7 +94,13 @@ const PlaceCard = () => {
         {state.map((item, index) => (
           <div
             key={index}
-            className={index === 3 ? 'md:hidden lg:block' : 'block'}
+            className={
+              index === 3
+                ? 'hidden lg:block'
+                : index === 2
+                  ? 'hidden md:block'
+                  : 'block'
+            }
           >
             <PlaceItem
               image={item.image}
