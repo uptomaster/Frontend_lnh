@@ -1,3 +1,6 @@
+import InfoCard from "../components/InformationCard";
+import infoList from '../data/InformationCardList';
+
 const Home = () => {
   return (
     <div>
@@ -10,8 +13,10 @@ const Home = () => {
           서울 숙소 찾기 영역
         </section>
 
-        <section>
-          정보 Card 영역
+        <section className="flex gap-[48px]">
+          {infoList.map((info) => (
+            <InfoCard image={info.image} title={info.title} desc={info.desc} />
+          ))}
         </section>
 
         <section>
