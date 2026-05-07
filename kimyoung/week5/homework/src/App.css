@@ -281,3 +281,56 @@ body {
 
   cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+  .page {
+    width: 92%;
+  }
+
+  .stay-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-section {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .hero {
+    height: auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+  }
+
+  .search-box {
+    position: static;
+
+    width: 100%;
+  }
+
+  .date-row {
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .info-section {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .stay-list {
+    grid-template-columns: 1fr;
+  }
+}
