@@ -38,7 +38,7 @@ function App() {
             <Route path="/top100" element={<Top100 />} />
 
             {/* 마이페이지 */}
-            <Route path="/mypage" element={accessToken ? <MyPage /> : <Naviagte to='/login' replace />} />
+            <Route path="/mypage" element={accessToken ? <MyPage /> : <Navigate to='/login' replace />} />
 
             {/* 404 페이지 (위의 경로 외에 접속 시) */}
             <Route path="*" element={<NotFound />} />
