@@ -3,6 +3,7 @@ import SearchSection from "./components/SearchSection";
 import InfoCard from "./components/InfoCard";
 import StayCard from "./components/StayCard";
 import MoreButton from "./components/MoreButton";
+import PriceControlButton from "./components/PriceControlButton";
 
 import room1 from "./assets/room1.jpg";
 import room2 from "./assets/room2.jpg";
@@ -96,6 +97,9 @@ function App() {
 
         <div className="button-area">
           <MoreButton />
+
+          <PriceControlButton text="+" />
+          <PriceControlButton text="-" />
         </div>
       </section>
     </Layout>
