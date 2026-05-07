@@ -31,7 +31,7 @@ const Home = () => {
               className=" max-w-[1400px] aspect-[2/1]  object-cover rounded-[12px]"
             />
           </div>
-          <div className=" absolute left-[80px] top-[120px] block w-[420px] rounded-[24px] ">
+          <div className=" absolute left-[240px] top-[100px] block w-[420px] rounded-[24px] ">
           <Search />
           </div>
         </section>
