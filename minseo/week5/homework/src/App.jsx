@@ -1,16 +1,24 @@
-import { useState } from "react";
-import "./App.css";
-import { initialStays } from "./data/stays"; // stays.js와 일치
-import StayCard from "./components/stay/StayCard"; // StayCard.jsx와 일치 (대문자 확인!)
+import { useState } from 'react';
+import './App.css';
+import { initialStays } from './data/stays';
+import StayCard from './components/stay/StayCard';
 
 function App() {
   const [priceOffset, setPriceOffset] = useState(0);
 
+  const handleIncrease = () => {
+    setPriceOffset(prev => prev + 10000);
+  };
+
+  const handleDecrease = () => {
+    setPriceOffset(prev => prev - 10000);
+  };
+
   return (
     <div className="airbnb-section">
       <header className="section-header">
-        <h1>서울의 게스트 선호 숙소</h1>
-        <p>평점, 후기, 신뢰도를 바탕으로 에어비앤비에서 가장 사랑받는 숙소로 손꼽히는 곳입니다.</p>
+        <h1>넓은 공간을 갖춘 숙소</h1>
+        <p>꿈에 그리던 휴가를 위한 편안한 독채 숙소를 찾아보세요.</p>
       </header>
 
       <main className="card-grid">
@@ -22,8 +30,15 @@ function App() {
           />
         ))}
       </main>
-      
-      {/* 가격 조절 버튼은 다음 커밋에서 만들게요! */}
+
+      <footer className="controls-wrapper">
+        <button className="more-btn">더 살펴보기</button>
+        <div className="js-controls">
+          <span className="control-label">전체 숙소 가격 조정</span>
+          <button onClick={handleDecrease} className="circle-btn">-</button>
+          <button onClick={handleIncrease} className="circle-btn">+</button>
+        </div>
+      </footer>
     </div>
   );
 }

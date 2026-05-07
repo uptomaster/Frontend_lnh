@@ -1,13 +1,11 @@
 import React from 'react';
 
 const StayCard = ({ stay, priceOffset }) => {
-  // 1주차 때 썼던 로직: 기본 가격 + 변동폭 (0원 이하 방지)
   const currentPrice = Math.max(0, stay.basePrice + priceOffset);
 
   return (
     <article className="card">
       <div className="img-container">
-        {/* 이미지는 stays.js에서 import한 변수가 들어갑니다 */}
         <img src={stay.img} alt={stay.loc} />
         {stay.badge && <span className="badge">{stay.badge}</span>}
       </div>
