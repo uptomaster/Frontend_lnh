@@ -1,10 +1,17 @@
+/* 바깥 컨테이너 — 다른 섹션이랑 너비 맞춤 */
 .search-section {
-  max-width: 480px;
+  max-width: 1240px;
   margin: 32px auto;
+  padding: 0 20px;
+}
+
+/* 카드 — 왼쪽에 붙여놓기 (좌우 margin auto 안 줌) */
+.search-card {
+  max-width: 480px;
   padding: 28px;
+  background: #fff;
   border: 1px solid #ebebeb;
   border-radius: 16px;
-  background: #fff;
 }
 
 .search-title {
@@ -85,7 +92,7 @@
 }
 
 @media (max-width: 600px) {
-  .search-section {
-    margin: 16px;
+  .search-card {
+    max-width: 100%;
   }
 }
