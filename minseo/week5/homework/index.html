@@ -1,73 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>에어비앤비 클론코딩 - 주차 과제</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="airbnb-section">
-        <!-- 1. 헤더 영역 -->
-        <header class="section-header">
-            <h1>넓은 공간을 갖춘 숙소</h1>
-            <p>꿈에 그리던 휴가를 위한 편안한 독채 숙소를 찾아보세요.</p>
-        </header>
-
-        <!-- 2. 카드 그리드 (에어비앤비 4열 레이아웃) -->
-        <main class="card-grid">
-            <!-- 카드 1 (가격 조절 대상) -->
-            <article class="card">
-                <div class="img-container">
-                    <img src="./image1.png" alt="서울의 집">
-                </div>
-                <div class="info">
-                    <div class="info-top">
-                        <span class="loc">서울의 집</span>
-                        <span class="rating">★ 신규</span>
-                    </div>
-                    <p class="desc">Yuo Stay / 코지하우스 / 등촌역6분/염창역...</p>
-                    <p class="gray">침대 3개</p>
-                    <p class="gray">4월 23일~28일</p>
-                    <p class="price">총액 <span id="target-price">₩918,647</span></p>
-                </div>
-            </article>
-
-            <!-- 카드 2, 3, 4 (데이터만 변경) -->
-            <article class="card">
-                <div class="img-container">
-                    <img src="./image2.png" alt="숙소">
-                    <span class="badge">게스트 선호</span>
-                </div>
-                <div class="info"><div class="info-top"><span class="loc">군자동의 아파트</span><span class="rating">★ 4.77 (13)</span></div>
-                <p class="desc">Hail602/신축/Residence/성수/건국,세종&...</p><p class="gray">퀸사이즈 침대 1개</p><p class="gray">5월 6일~11일</p><p class="price">총액 ₩621,941</p></div>
-            </article>
-
-            <article class="card">
-                <div class="img-container"><img src="./image3.png" alt="숙소"></div>
-                <div class="info"><div class="info-top"><span class="loc">서울의 집</span><span class="rating">★ 신규</span></div>
-                <p class="desc">[NEW 오픈특가] 신당역 5분/2룸 3침대/...</p><p class="gray">퀸사이즈 침대 3개</p><p class="gray">4월 13일~18일</p><p class="price">총액 ₩1,064,478</p></div>
-            </article>
-
-            <article class="card">
-                <div class="img-container"><img src="./image4.png" alt="숙소"><span class="badge">게스트 선호</span></div>
-                <div class="info"><div class="info-top"><span class="loc">송파1동의 아파트</span><span class="rating">★ 5.0 (10)</span></div>
-                <p class="desc">무료짐보관/송파나루5분/석촌역7분/...</p><p class="gray">침대 3개</p><p class="gray">6월 7일~12일</p><p class="price">총액 ₩553,471</p></div>
-            </article>
-        </main>
-
-        <!-- 3. 하단 컨트롤러 -->
-        <footer class="controls-wrapper">
-            <button class="more-btn">더 살펴보기</button>
-            <div class="js-controls">
-                <span class="control-label">서울의 집 가격 조정</span>
-                <button id="minus-btn" class="circle-btn">-</button>
-                <button id="plus-btn" class="circle-btn">+</button>
-            </div>
-        </footer>
-    </div>
-
-    <!-- 파일 이름 script.js로 변경 확인! -->
-    <script src="./script.js"></script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homework</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
