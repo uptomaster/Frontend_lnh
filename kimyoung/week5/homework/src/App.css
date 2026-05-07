@@ -123,3 +123,35 @@ body {
 
   cursor: pointer;
 }
+
+.info-section {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 80px;
+
+  margin-bottom: 80px;
+}
+
+.info-icon {
+  font-size: 28px;
+
+  color: #555;
+
+  margin-bottom: 18px;
+}
+
+.info-card h3 {
+  font-size: 18px;
+
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #555;
+}
