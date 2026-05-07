@@ -4,21 +4,21 @@ const StayCard = ({ stay, priceOffset }) => {
   const currentPrice = Math.max(0, stay.basePrice + priceOffset);
 
   return (
-    <article className="card">
-      <div className="img-container">
+    <article className="stay-card">
+      <div className="img-box">
         <img src={stay.img} alt={stay.loc} />
-        {stay.badge && <span className="badge">{stay.badge}</span>}
+        {stay.badge && <span className="stay-badge">🏅 {stay.badge}</span>}
       </div>
-      <div className="info">
-        <div className="info-top">
-          <span className="loc">{stay.loc}</span>
-          <span className="rating">★ {stay.rating}</span>
+      <div className="stay-info">
+        <div className="stay-title">
+          <span className="stay-loc">{stay.loc}</span>
+          <span className="stay-rating">★ {stay.rating}</span>
         </div>
-        <p className="desc">{stay.desc}</p>
-        <p className="gray">{stay.beds}</p>
-        <p className="gray">{stay.dates}</p>
-        <p className="price">
-          총액 <span>₩{currentPrice.toLocaleString()}</span>
+        <p className="stay-desc">{stay.desc}</p>
+        <p className="stay-gray">{stay.beds}</p>
+        <p className="stay-gray">{stay.dates}</p>
+        <p className="stay-price">
+          총액 <strong>₩{currentPrice.toLocaleString()}</strong>
         </p>
       </div>
     </article>
