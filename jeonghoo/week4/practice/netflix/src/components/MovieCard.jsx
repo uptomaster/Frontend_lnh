@@ -1,29 +1,32 @@
-const MovieCard = ({
-  movieImage,
-  releaseDate,
-  actor,
-  title,
-  director,
-  description,
-}) => {
+const MovieCard = ({ movie, onClick }) => {
   return (
-    <article className="overflow-hidden rounded-lg border border-gray-700 bg-zinc-900">
-      <div className="h-[380px] overflow-hidden">
+    <article
+      className="cursor-pointer overflow-hidden rounded-lg border border-gray-700 bg-zinc-900"
+      onClick={onClick}
+    >
+      <div className="h-[330px] overflow-hidden">
         <img
-          src={movieImage}
-          alt={`${title} 영화 포스터`}
+          src={
+            movie.image?.medium ||
+            'https://via.placeholder.com/210x295?text=No+Image'
+          }
+          alt={`${movie.name} 포스터`}
           className="h-full w-full object-cover"
         />
       </div>
 
-      <div className="space-y-2 p-4">
-        <h2 className="text-lg font-semibold text-white">{title}</h2>
+      <div className="space-y-2 p-3">
+        <h2 className="truncate text-base font-semibold text-white">
+          {movie.name}
+        </h2>
 
-        <p className="text-sm text-gray-400">개봉일: {releaseDate}</p>
-        <p className="text-sm text-gray-400">출연진: {actor}</p>
-        <p className="text-sm text-gray-400">감독: {director}</p>
+        <p className="truncate text-xs text-gray-400">
+          장르: {movie.genres?.length > 0 ? movie.genres.join(', ') : '정보 없음'}
+        </p>
 
-        <p className="text-sm text-gray-500">{description}</p>
+        <p className="text-xs text-gray-400">
+          📅 {movie.premiered || '개봉일 정보 없음'}
+        </p>
       </div>
     </article>
   );

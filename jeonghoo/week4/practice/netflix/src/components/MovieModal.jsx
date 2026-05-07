@@ -1,10 +1,9 @@
 const MovieModal = ({ movie, onClose }) => {
   if (!movie) return null;
 
-  const { movieImage, title } = movie;
-
-  const handleModalClick = (e) => {
-    e.stopPropagation();
+  const removeHtmlTags = (text) => {
+    if (!text) return '줄거리 정보가 없습니다.';
+    return text.replace(/<[^>]*>/g, '');
   };
 
   return (
@@ -13,21 +12,42 @@ const MovieModal = ({ movie, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md overflow-hidden rounded-lg bg-zinc-900"
-        onClick={handleModalClick}
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-zinc-900 p-6"
+        onClick={(event) => event.stopPropagation()}
       >
         <button
-          className="absolute top-3 right-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/70 text-lg font-bold text-white"
+          type="button"
+          className="absolute top-3 right-3 rounded bg-black px-3 py-1 text-white"
           onClick={onClose}
         >
           X
         </button>
 
-        <img
-          src={movieImage}
-          alt={`${title} 영화 포스터`}
-          className="w-full object-cover"
-        />
+        <div className="flex gap-6">
+          <img
+            src={
+              movie.image?.original ||
+              movie.image?.medium ||
+              'https://via.placeholder.com/210x295?text=No+Image'
+            }
+            alt={`${movie.name} 포스터`}
+            className="w-56 rounded object-cover"
+          />
+
+          <div className="space-y-3 text-white">
+            <h2 className="text-2xl font-bold">{movie.name}</h2>
+            <p className="text-sm text-gray-400">
+              개봉일: {movie.premiered || '정보 없음'}
+            </p>
+            <p className="text-sm text-gray-400">
+              장르:{' '}
+              {movie.genres?.length > 0 ? movie.genres.join(', ') : '정보 없음'}
+            </p>
+            <p className="text-sm leading-6 text-gray-300">
+              {removeHtmlTags(movie.summary)}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
