@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Layout from "./components/Layout";
 import SearchSection from "./components/SearchSection";
 import InfoCard from "./components/InfoCard";
@@ -11,7 +13,7 @@ import room3 from "./assets/room3.jpg";
 import room4 from "./assets/room4.jpg";
 
 function App() {
-  const stays = [
+  const [stays, setStays] = useState([
     {
       id: 1,
       image: room1,
@@ -56,7 +58,20 @@ function App() {
       rating: "★ 5.0",
       price: 495000,
     },
-  ];
+  ]);
+
+  const changePrice = (amount) => {
+    setStays(
+      stays.map((stay) => {
+        const nextPrice = stay.price + amount;
+
+        return {
+          ...stay,
+          price: nextPrice < 0 ? 0 : nextPrice,
+        };
+      }),
+    );
+  };
 
   return (
     <Layout>
@@ -98,8 +113,8 @@ function App() {
         <div className="button-area">
           <MoreButton />
 
-          <PriceControlButton text="+" />
-          <PriceControlButton text="-" />
+          <PriceControlButton text="+" onClick={() => changePrice(10000)} />
+          <PriceControlButton text="-" onClick={() => changePrice(-10000)} />
         </div>
       </section>
     </Layout>
