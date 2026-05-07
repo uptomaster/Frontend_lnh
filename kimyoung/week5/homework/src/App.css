@@ -1,63 +1,66 @@
-.hero {
-  height: 430px;
-  background-image: url("./assets/room4.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 0 0 28px 28px;
-  position: relative;
-  margin-bottom: 70px;
-}
-
-.search-box {
-  position: absolute;
-  top: 55px;
-  left: 70px;
-  width: 330px;
-  background-color: white;
-  border-radius: 24px;
-  padding: 28px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-}
-
-.search-box h1 {
-  font-size: 28px;
+.stay-section h2 {
+  font-size: 26px;
   margin-bottom: 8px;
 }
 
-.search-box p {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 18px;
+.stay-subtitle {
+  color: #555;
+  margin-bottom: 26px;
 }
 
-.search-box label {
-  display: block;
+.stay-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.stay-image-box {
+  position: relative;
+  height: 230px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.stay-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stay-image-box span {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: white;
+  border-radius: 999px;
+  padding: 7px 12px;
   font-size: 12px;
   font-weight: 700;
-  margin-bottom: 5px;
 }
 
-.search-box input {
-  width: 100%;
-  height: 42px;
-  border: 1px solid #dddddd;
-  border-radius: 9px;
-  padding: 0 12px;
-  margin-bottom: 10px;
-}
-
-.date-row {
+.stay-title-row {
   display: flex;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.search-button {
-  width: 100%;
-  height: 44px;
-  border: none;
-  border-radius: 9px;
-  background-color: #e61e4d;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
+.stay-title-row h3 {
+  font-size: 15px;
+}
+
+.stay-title-row p {
+  font-size: 14px;
+}
+
+.stay-info p {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.stay-info strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
 }
