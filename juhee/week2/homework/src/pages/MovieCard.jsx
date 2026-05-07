@@ -1,10 +1,10 @@
-const MovieCard = ({movie})=>{
+const MovieCard = ({movie, onClick})=>{
     const { movieImage, releaseDate, actor, title, director, description } =
     movie;
 
     return (
         
-        <section className="p-10">
+        <section className="p-10" onClick={onClick}>
           <section className="w-65 bg-white p-4 rounded-lg shadow hover:scale-106">
             <img
               src={movieImage}
