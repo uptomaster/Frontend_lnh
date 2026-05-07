@@ -2,6 +2,7 @@ import Layout from "./components/Layout";
 import SearchSection from "./components/SearchSection";
 import InfoCard from "./components/InfoCard";
 import StayCard from "./components/StayCard";
+import MoreButton from "./components/MoreButton";
 
 import room1 from "./assets/room1.jpg";
 import room2 from "./assets/room2.jpg";
@@ -91,6 +92,10 @@ function App() {
           {stays.map((stay) => (
             <StayCard key={stay.id} stay={stay} />
           ))}
+        </div>
+
+        <div className="button-area">
+          <MoreButton />
         </div>
       </section>
     </Layout>
