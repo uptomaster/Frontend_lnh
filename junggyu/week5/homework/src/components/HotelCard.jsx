@@ -14,9 +14,9 @@ const HotelCard = ({ image, title, rating, description, bed, date, price }) => {
         <p className="text-[16px] text-[#6A6A6A]">{date}</p>
       </div>
 
-      <div className="">
+      <div className="pt-[8px] flex items-center gap-[6px]">
         <p className="text-[16px] font-semibold text-[#222222]">총액</p>
-        <p className="">{price}</p>
+        <p className="">₩{price.toLocaleString()}</p>
       </div>
     </section>
   );

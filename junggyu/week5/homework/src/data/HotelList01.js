@@ -12,7 +12,7 @@ const hotelList = [
     description: '경복궁역2분/...',
     bed: '침대 3개',
     date: '5월 11일~16일',
-    price: '₩992,283',
+    price: 992283,
     badge: '게스트 선호',
   },
   {
@@ -23,7 +23,7 @@ const hotelList = [
     description: '넓은2룸-석촌역3분-6인/...',
     bed: '퀸사이즈 침대 2개',
     date: '6월 8일~13일',
-    price: '₩675,810',
+    price: 675810,
     badge: '게스트 선호',
   },
   {
@@ -34,7 +34,7 @@ const hotelList = [
     description: '[온유스테이]감성숙소/2~4인/...',
     bed: '침대 3개',
     date: '5월 18일~23일',
-    price: '₩450,000',
+    price: 450000,
     badge: '🏆 게스트 선호',
   },
   {
@@ -45,7 +45,7 @@ const hotelList = [
     description: '[홈캉스 끝판왕] 강남직결&...',
     bed: '침대 3개',
     date: '5월 17일~22일',
-    price: '₩348,900',
+    price: 348900,
     badge: '🏆 게스트 선호',
   },
 ];

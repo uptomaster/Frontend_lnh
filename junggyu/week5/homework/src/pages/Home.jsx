@@ -5,8 +5,21 @@ import hotelList1 from '../data/HotelList01';
 import hotelList2 from '../data/HotelList02';
 import Search from '../components/Search';
 import Img from '../assets/hongik.jpg';
+import MoreButton from "../components/MoreButton";
+import { useState } from 'react';
+import PlusMinus from "../components/PlusMinus";
 
 const Home = () => {
+  const [priceChange, setPriceChange] = useState(0);
+
+  const handlePlus = () => {
+    setPriceChange((prev) => prev + 10000);
+  };
+
+  const handleMinus = () => {
+    setPriceChange((prev) => Math.max(prev - 10000, 0));
+  };
+
   return (
     <div>
 
@@ -41,7 +54,7 @@ const Home = () => {
                 description={hotel.description}
                 bed={hotel.bed}
                 date={hotel.date}
-                price={hotel.price}
+                price={hotel.price + priceChange}
               />
             ))}
           </div>
@@ -59,10 +72,15 @@ const Home = () => {
                 description={hotel.description}
                 bed={hotel.bed}
                 date={hotel.date}
-                price={hotel.price}
+                price={hotel.price + priceChange}
               />
             ))}
           </div>
+          <div className="pt-[32px] flex gap-[15px]">
+            <MoreButton />
+            <PlusMinus onMinus={handleMinus} onPlus={handlePlus} />
+          </div>
+          
         </section>
 
         <section className="py-[32px] pl-[80px] pr-[80px]">

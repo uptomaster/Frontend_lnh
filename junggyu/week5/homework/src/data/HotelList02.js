@@ -12,7 +12,7 @@ const roomList = [
     description: '[원스테이]송파나루역도보3분/...',
     bed: '더블 침대 3개',
     date: '5월 17일~22일',
-    price: '₩583,030',
+    price: 583030,
     badge: '게스트 선호',
   },
   {
@@ -23,7 +23,7 @@ const roomList = [
     description: '강남의 단독주택 전체 | 5베드룸 정원...',
     bed: '침대 7개',
     date: '5월 5일~10일',
-    price: '₩6,308,000',
+    price: 6308000,
     badge: '🏆 게스트 선호',
   },
   {
@@ -34,7 +34,7 @@ const roomList = [
     description: '[오픈특가]Golden Stay/한강공원/...',
     bed: '침대 3개',
     date: '5월 18일~23일',
-    price: '₩591,000',
+    price: 591000,
     badge: null,
   },
   {
@@ -45,7 +45,7 @@ const roomList = [
     description: '오픈 특가 | 2호선 신림역 도보6분 | ...',
     bed: '퀸사이즈 침대 4개',
     date: '5월 5일~10일',
-    price: '₩528,600',
+    price: 528600,
     badge: null,
   },
 ];
