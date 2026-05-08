@@ -1,4 +1,4 @@
-const HotelCard = ({ image, title, rating, description, bed, date, price }) => {
+const HotelCard = ({ key, image, title, rating, description, bed, date, price }) => {
   return (
     <section className="">
       <img src={image} className="rounded-[16px] w-full aspect-[1/1] object-cover" />
