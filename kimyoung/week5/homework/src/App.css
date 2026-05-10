@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.page {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0 80px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 50px;
+}
+
+.logo {
+  color: #ff385c;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.navbar a {
+  color: #222;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero {
+  height: 430px;
+
+  background-image: url("./assets/room4.jpg");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 0 0 28px 28px;
+
+  position: relative;
+
+  margin-bottom: 70px;
+}
+
+.search-box {
+  position: absolute;
+
+  top: 55px;
+  left: 70px;
+
+  width: 330px;
+
+  background-color: white;
+
+  border-radius: 24px;
+
+  padding: 28px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.search-box h1 {
+  font-size: 28px;
+
+  margin-bottom: 8px;
+}
+
+.search-box p {
+  font-size: 13px;
+
+  color: #666;
+
+  margin-bottom: 18px;
+}
+
+.search-box label {
+  display: block;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 42px;
+
+  border: 1px solid #dddddd;
+  border-radius: 9px;
+
+  padding: 0 12px;
+
+  margin-bottom: 10px;
+}
+
+.date-row {
+  display: flex;
+
+  gap: 8px;
+}
+
+.search-button {
+  width: 100%;
+  height: 44px;
+
+  border: none;
+  border-radius: 9px;
+
+  background-color: #e61e4d;
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.info-section {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 80px;
+
+  margin-bottom: 80px;
+}
+
+.info-icon {
+  font-size: 28px;
+
+  color: #555;
+
+  margin-bottom: 18px;
+}
+
+.info-card h3 {
+  font-size: 18px;
+
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #555;
+}
+
+.stay-section h2 {
+  font-size: 26px;
+
+  margin-bottom: 8px;
+}
+
+.stay-subtitle {
+  color: #555;
+
+  margin-bottom: 26px;
+}
+
+.stay-list {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 22px;
+}
+
+.stay-card {
+  width: 100%;
+}
+
+.stay-image-box {
+  position: relative;
+
+  height: 230px;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  margin-bottom: 12px;
+}
+
+.stay-image-box img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.stay-image-box span {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  background-color: white;
+
+  border-radius: 999px;
+
+  padding: 7px 12px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.stay-title-row {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.stay-title-row h3 {
+  font-size: 15px;
+}
+
+.stay-title-row p {
+  font-size: 14px;
+}
+
+.stay-info p {
+  font-size: 13px;
+
+  color: #666;
+
+  margin-top: 4px;
+}
+
+.stay-info strong {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 14px;
+}
+
+.button-area {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.more-button {
+  padding: 13px 24px;
+
+  border: 1px solid #222;
+  border-radius: 8px;
+
+  background-color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.price-button {
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #eeeeee;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .page {
+    width: 92%;
+  }
+
+  .stay-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-section {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .hero {
+    height: auto;
+
+    padding: 30px;
+
+    border-radius: 20px;
+  }
+
+  .search-box {
+    position: static;
+
+    width: 100%;
+  }
+
+  .date-row {
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .info-section {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .stay-list {
+    grid-template-columns: 1fr;
+  }
+}
