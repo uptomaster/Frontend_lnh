@@ -6,17 +6,19 @@ const BASE_URL = import.meta.env.VITE_BASE_URL
 export const loginAPI = async ({username, password}) => { 
     try {
         // 7번 줄을 이렇게 고치세요! (작은따옴표 ' 가 아니라 백틱 ` 입니다)
-        const response = await axios.post(`${BASE_URL}/api/auth/login`, {
+        const {data} = await axios.post(`${BASE_URL}/api/auth/login`, {
             username,
             password
         });
 
         // [핵심] response 박스 안의 data에서 accessToken을 꺼냅니다.
-        const accessToken = response.accessToken;
+        const accessToken = data.accessToken;
         
         if (!accessToken) {
             throw new Error("토큰이 응답에 없습니다.");
         }
+
+        localStorage.setItem("accessToken", accessToken);
 
         return accessToken;
     } catch (error) {

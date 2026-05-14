@@ -15,7 +15,7 @@ const Login = () => {
         
         try {
             // [수정] authApi의 인자 형식과 일치시켰습니다.
-            const accessToken = await loginAPI(username, password);
+            const accessToken = await loginAPI({username, password});
 
             if (accessToken) {
                 setAccessToken(accessToken);
