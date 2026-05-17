@@ -1,8 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import useAuthStore from "../../stores/useAuthStore";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const accessToken = useAuthStore((state) => state.accessToken);
+  const logout = useAuthStore((state) => state.logout);
+
+  // 로그아웃 시, 초기 화면으로 이동
+  const handleLogout = () => {
+    logout();
+    setIsOpen(false);
+    navigate("/");
+  };
 
   return (
     <nav className="fixed top-0 border-b-1 border-gray-600 left-0 right-0 h-20 bg-black text-white flex items-center justify-between px-10 z-50">
@@ -27,12 +37,21 @@ const Navbar = () => {
             My Page
           </Link>
         </div>
-        <Link
-          to="/login"
-          className="hidden md:block font-semibold text-2xl hover:text-blue-400 transition-colors duration-200"
-        >
-          Login
-        </Link>
+        {accessToken ? (
+          <Link
+            onClick={handleLogout}
+            className="hidden md:block font-semibold text-2xl hover:text-blue-400 transition-colors duration-200"
+          >
+            Logout
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="hidden md:block font-semibold text-2xl hover:text-blue-400 transition-colors duration-200"
+          >
+            Login
+          </Link>
+        )}
       </div>
 
       <div className="flex md:hidden h-full w-full items-center justify-between">
@@ -57,9 +76,15 @@ const Navbar = () => {
           <Link to="/top100" onClick={() => setIsOpen(false)}>
             Top 100
           </Link>
-          <Link to="/mypage" onClick={() => setIsOpen(false)}>
-            My Page
-          </Link>
+          {accessToken ? (
+            <Link onClick={handleLogout} className="text-left">
+              Logout
+            </Link>
+          ) : (
+            <Link to="/login" onClick={() => setIsOpen(false)}>
+              Login
+            </Link>
+          )}
           <Link to="/login" onClick={() => setIsOpen(false)}>
             Login
           </Link>
