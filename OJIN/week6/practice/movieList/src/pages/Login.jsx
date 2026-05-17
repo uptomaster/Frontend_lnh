@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginAPI } from "../apis/authApi"; // 로그인 API 함수
 import useAuthStore from "../stores/useAuthStore"; // zustand 인증 상태 관리 스토어
 
@@ -46,6 +46,9 @@ const Login = () => {
             로그인
           </button>
         </form>
+        <Link to="/signup" className="text-white hover:underline">
+          회원가입
+        </Link>
       </div>
     </div>
   );
