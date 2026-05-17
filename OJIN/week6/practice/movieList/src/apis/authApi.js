@@ -10,15 +10,32 @@ export const loginAPI = async (username, password) => {
       password,
     });
     const accessToken = data.accessToken;
+    const refreshToken = data.refreshToken;
 
-    if (!accessToken) {
-      // accessToken이 없는 경우 로그인 실패
+    if (!accessToken || !refreshToken) {
+      // accessToken, refreshToken이 없는 경우 로그인 실패
       throw new Error("로그인 실패");
     }
 
-    return accessToken; // 로그인 성공 시 accessToken 반환
+    return { accessToken, refreshToken }; // 로그인 성공 시 accessToken, refreshToken 반환
   } catch (error) {
     throw new Error("로그인 실패");
+  }
+};
+
+export const reissueAPI = async (refreshToken) => {
+  try {
+    const { data } = await axios.post(
+      `${BASE_URL}/api/auth/reissue`,
+      JSON.stringify(refreshToken),
+    );
+
+    return {
+      accessToken: data.accessToken,
+      refreshToken: data.refreshToken,
+    };
+  } catch (error) {
+    throw new Error("토큰 재발급 실패");
   }
 };
 
