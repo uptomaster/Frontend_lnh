@@ -39,6 +39,16 @@ export const reissueAPI = async (refreshToken) => {
   }
 };
 
+export const logoutAPI = async (accessToken) => {
+  try {
+    const { data } = await axios.post(`${BASE_URL}/api/auth/logout`, {});
+
+    return data;
+  } catch (error) {
+    throw new Error("로그아웃 실패");
+  }
+};
+
 export const signupAPI = async (email, password) => {
   try {
     const { data } = await axios.post(`${BASE_URL}/api/auth/signup`, {

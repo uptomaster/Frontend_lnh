@@ -8,10 +8,15 @@ const Navbar = () => {
   const logout = useAuthStore((state) => state.logout);
 
   // 로그아웃 시, 초기 화면으로 이동
-  const handleLogout = () => {
-    logout();
-    setIsOpen(false);
-    navigate("/");
+  const handleLogout = async () => {
+    try {
+      await logoutAPI(accessToken);
+    } catch (error) {
+    } finally {
+      logout();
+      setIsOpen(false);
+      navigate("/");
+    }
   };
 
   return (

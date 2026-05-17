@@ -18,7 +18,7 @@ const useAuthStore = create(
       // 로그인 여부 확인. accessToken이 존재하면 true 반환
       isloggedIn: () => !!set().accessToken,
 
-      // 로그아웃. accessToken = null로 변경하여 저장된 로그인 상태 초기화
+      // 로그아웃. null로 변경하여 저장된 로그인 상태 초기화
       logout: () => set({ accessToken: null, refreshToken: null }),
     }),
     { name: "auth-storage" },
