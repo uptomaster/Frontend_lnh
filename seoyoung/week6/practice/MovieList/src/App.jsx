@@ -1,0 +1,36 @@
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import Login from './pages/Login';
+import Mypage from './pages/MyPage';
+import NotFound from './pages/NotFound';
+import Top100 from './pages/Top100';
+import MovieList from './pages/MovieList';
+import { Layout } from './components/layouts/Layout';
+import useAuthStore from './stores/useAuthStore'; //토큰받아와야됨
+
+function App() {
+  const accessToken = useAuthStore((state) => state.accessToken);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MovieList />} />
+          <Route
+            path="/Mypage"
+            element={
+              accessToken ? <Mypage /> : <Navigate to="/Login" replace /> //OK!
+            }
+          />
+          <Route path="/Top100" element={<Top100 />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+//return <div className="text-red-400 hover:text-red-600">app</div>;
+//속성(text=글자색상)-색상계열-밝기(500이 기본)
