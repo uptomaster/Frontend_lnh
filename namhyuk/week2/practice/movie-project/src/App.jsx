@@ -1,17 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import React from "react";
+import {
+  Navigate,
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import useAuthStore from "./stores/useAuthStore";
 // 컴포넌트 임포트
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 
 // 페이지 임포트
-import MovieList from './pages/MovieList';
-import Login from './pages/Login';
-import Top100 from './pages/Top100';
-import MyPage from './pages/MyPage';
-import NotFound from './pages/NotFound';
+import MovieList from "./pages/MovieList";
+import Login from "./pages/Login";
+import Top100 from "./pages/Top100";
+import MyPage from "./pages/MyPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
+  const accessToken = useAuthStore((state) => state.accessToken);
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-950 text-white">
@@ -23,21 +30,21 @@ function App() {
           <Routes>
             {/* 메인 페이지 */}
             <Route path="/" element={<MovieList />} />
-            
+
             {/* 로그인 페이지 */}
             <Route path="/login" element={<Login />} />
-            
+
             {/* 인기 영화 Top 100 페이지 */}
             <Route path="/top100" element={<Top100 />} />
-            
+
             {/* 마이페이지 */}
-            <Route path="/mypage" element={<MyPage />} />
-            
+            <Route path="/mypage" element={accessToken ? <MyPage /> : <Navigate to='/login' replace />} />
+
             {/* 404 페이지 (위의 경로 외에 접속 시) */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-        
+
         {/* 푸터가 필요하다면 여기에 추가 가능 */}
       </div>
     </Router>
