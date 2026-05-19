@@ -19,7 +19,10 @@ const useAuthStore = create(
       isloggedIn: () => !!set().accessToken,
 
       // 로그아웃. null로 변경하여 저장된 로그인 상태 초기화
-      logout: () => set({ accessToken: null, refreshToken: null }),
+      logout: () => {
+        set({ accessToken: null, refreshToken: null });
+        localStorage.removeItem("auth-storage");
+      },
     }),
     { name: "auth-storage" },
   ),

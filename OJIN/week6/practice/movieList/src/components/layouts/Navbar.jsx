@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import useAuthStore from "../../stores/useAuthStore";
 
@@ -15,7 +15,6 @@ const Navbar = () => {
     } finally {
       logout();
       setIsOpen(false);
-      navigate("/");
     }
   };
 
