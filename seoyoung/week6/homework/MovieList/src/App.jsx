@@ -4,6 +4,7 @@ import Mypage from './pages/MyPage';
 import NotFound from './pages/NotFound';
 import Top100 from './pages/Top100';
 import MovieList from './pages/MovieList';
+import Signup from './pages/Signup';
 import { Layout } from './components/layouts/Layout';
 import useAuthStore from './stores/useAuthStore'; //토큰받아와야됨
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Top100" element={<Top100 />} />
           <Route path="/Login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/Signup" element={<Signup />} />
         </Route>
       </Routes>
     </BrowserRouter>

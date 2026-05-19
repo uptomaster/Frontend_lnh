@@ -68,7 +68,7 @@ const Navbar = () => {
       </button>
 
       {isOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-black flex flex-col px-6 space-y-4">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-black flex flex-col px-6 space-y-4 ">
           <Link
             to="/top100"
             className="text-xl hover:text-purple-300 hover:font-bold"
@@ -83,9 +83,23 @@ const Navbar = () => {
           >
             My Page
           </Link>
-          <Link to="/login" onClick={() => setIsOpen(false)}>
-            Login
-          </Link>
+
+          {isLoggedIn ? (
+            <button
+              onClick={handleLogout}
+              className="w-max text-left text-xl hover:text-purple-300 hover:font-bold"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              onClick={() => setIsOpen(false)}
+              className="w-max text-left text-xl hover:text-purple-300 hover:font-bold"
+            >
+              Login
+            </Link>
+          )}
         </div>
       )}
     </nav>

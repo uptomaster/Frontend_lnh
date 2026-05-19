@@ -8,7 +8,6 @@ const useAuthStore = create(
       accessToken: null,
       //로그인 여부 함수
       isLoggedIn: () => false, //상태 변수
-
       //토큰 저장함수
       setAccessToken: (token) =>
         set({ accessToken: token, isLoggedIn: !!token }), //isLoggiedIn을 ture로 변경

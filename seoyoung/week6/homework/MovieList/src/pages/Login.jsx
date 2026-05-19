@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react'; //리액트 상태 훅
 import { useNavigate } from 'react-router-dom'; //페이지 이동(로그인 성공 시 홈화면으로 넘어가도록)
 import { loginAPI } from '../apis/authApi'; //로그인 API 함수
@@ -24,7 +25,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#141414] text-white flex items-center justify-center px-6">
+    <div
+      className="min-h-screen bg-[#141414] text-white flex items-center justify-center px-6 flex flex-col
+    "
+    >
       <div className="w-full max-w-[420px] rounded-lg bg-black/75 p-10">
         <h1 className="mb-6 text-3xl font-bold">로그인</h1>
         {/*로그인 폼 */}
@@ -51,6 +55,9 @@ const Login = () => {
           </button>
         </form>
       </div>
+      <Link to="/Signup" className="bg-blue-700 p-4 rounded">
+        회원가입하기
+      </Link>
     </div>
   );
 };
