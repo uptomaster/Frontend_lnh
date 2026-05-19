@@ -1,0 +1,17 @@
+.price-control {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.price-control button {
+  padding: 5px 12px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.price-control button:hover {
+  background: #f7f7f7;
+}
