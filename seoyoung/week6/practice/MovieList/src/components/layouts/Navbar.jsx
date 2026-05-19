@@ -40,12 +40,15 @@ const Navbar = () => {
         MovieList 🎥
       </Link>
 
-      <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-2xl">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden text-2xl cursor-pointer"
+      >
         {isOpen ? 'X' : '☰'}
       </button>
 
       {isOpen && (
-        <div className="md:hidden absoulte top-20 left-0 right-0 bg-black flex flex-cal px-6 space-y-4">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-black flex flex-col px-6 space-y-4">
           <Link
             to="/top100"
             className="text-xl hover:text-purple-300 hover:font-bold"

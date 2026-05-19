@@ -26,7 +26,7 @@ const MovieModal = ({ show, onClose }) => {
             'http://via.placeholder.com/400x600?text=No+Image'
           }
           alt={show.name}
-          className="max-h-52 md:max-h=none w-full p-2 rounded-xl md:w-64 object-cover flex-shrink-0"
+          className="max-h-52 md:max-h-none w-full p-2 rounded-xl md:w-64 object-cover flex-shrink-0"
         />
         {/*오른쪽 영역 : 상세 정보 */}
         <div className="p-6 flex flex-col lg:gap-4 gap-3 overflow-y-auto">

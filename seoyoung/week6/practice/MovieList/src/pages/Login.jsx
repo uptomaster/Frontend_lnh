@@ -24,7 +24,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg[#141414] text-white flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[#141414] text-white flex items-center justify-center px-6">
       <div className="w-full max-w-[420px] rounded-lg bg-black/75 p-10">
         <h1 className="mb-6 text-3xl font-bold">로그인</h1>
         {/*로그인 폼 */}
