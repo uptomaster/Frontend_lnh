@@ -4,7 +4,7 @@ import { loginAPI } from '../apis/authApi'; //로그인 API 함수
 import useAuthStore from '../stores/useAuthStore'; //zustand 인증 상태 관리 스토어
 
 const Login = () => {
-  const setAccessToken = useAuthStore((state) => state.setAccessToken);
+  const { setAccessToken, isLoggedIn } = useAuthStore();
   const navigate = useNavigate();
 
   const [username, setUsername] = useState('');

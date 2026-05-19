@@ -6,10 +6,14 @@ const useAuthStore = create(
     (set) => ({
       //초기 상태 설정
       accessToken: null,
-      //토큰 저장함수
-      setAccessToken: (token) => set({ accessToken: token }),
       //로그인 여부 함수
-      isLoggedIn: () => !!set().accessToken,
+      isLoggedIn: () => false, //상태 변수
+
+      //토큰 저장함수
+      setAccessToken: (token) =>
+        set({ accessToken: token, isLoggedIn: !!token }), //isLoggiedIn을 ture로 변경
+      //토큰 삭제함수
+      clearAccessToken: () => set({ accessToken: null, isLoggedIn: false }),
     }),
     {
       name: 'auth-storage',
