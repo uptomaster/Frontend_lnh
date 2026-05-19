@@ -1,0 +1,34 @@
+[
+  {
+    "movieImage": "/src/assets/img.webp", 
+    "releaseDate": "2025.12.31",
+    "actor": "구교환, 문가영",
+    "title": "만약에 우리",
+    "director": "김도영",
+    "description": "은호는 베트남의 호찌민시 택시에 앉아 공항으로 가던 중 택시 기사로부터 현재 불어닥친 태풍의 이름이 캐슬린이며, 태풍 이름을 이쁘게 지은 이유는 무사히 지나길 바라는 의미라는 설명을 듣는다. 이후 비행기에서 우연히 전 애인인 정원을 대략 10년 만에 보게 되고, 두 사람은 이내 서로를 알아본다."
+  },
+  {
+    "movieImage": "/src/assets/movie01.jpg", 
+    "releaseDate": "2026.03.18",
+    "actor": "라이언 고슬링",
+    "title": "프로젝트 헤일메리",
+    "director": "필 로드, 크리스토퍼 밀러",
+    "description": "죽어가는 태양, 종말 위기에 놓인 지구 인류의 운명을 건 단 하나의 미션 그의 마지막 임무가 시작된다!"
+  },
+  {
+    "movieImage": "/src/assets/movie02.jpg", 
+    "releaseDate": "2026.02.04",
+    "actor": "유해진, 박지훈",
+    "title": "왕과 사는 남자",
+    "director": "장항준",
+    "description": "그러나 촌장이 부푼 꿈으로 맞이한 이는 왕위에서 쫓겨난 이홍위였다. 유배지를 지키는 보수주인으로 그의 모든 일상을 감시해야만 하는 촌장은 삶의 의지를 잃어버린 이홍위가 점점 신경 쓰이는데…"
+  },
+  {
+    "movieImage": "/src/assets/movie03.jpg", 
+    "releaseDate": "2026.04.01",
+    "actor": "미치에다 슌스케",
+    "title": "네가 마지막으로 남긴 노래",
+    "director": "미키 타카히로",
+    "description": "유난히 눈에 띄지 않는 소년 ‘하루토’와 유난히 빛나는 소녀 ‘아야네’."
+  }
+]
