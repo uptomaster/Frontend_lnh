@@ -61,3 +61,41 @@ export const signupAPI = async (email, password) => {
     throw new Error("회원가입 실패");
   }
 };
+// 영화카드 데이터를 스웨거에 작성된 형태로 POST 요청
+export const saveContentAPI = async (movie, accessToken) => {
+  try {
+    const { data } = await axios.post(
+      `${BASE_URL}/api/contents`,
+      {
+        id: movie.id,
+        name: movie.name,
+        image: {
+          medium: movie.image?.medium,
+        },
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      },
+    );
+
+    return data;
+  } catch (error) {
+    throw new Error("컨텐츠 저장 실패");
+  }
+};
+//마이페이지에 서버에 저장된 콘텐츠 보여주기
+export const getContentsAPI = async (accessToken) => {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/api/contents`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    throw new Error("컨텐츠 조회 실패");
+  }
+};
