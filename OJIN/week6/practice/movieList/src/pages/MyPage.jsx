@@ -40,6 +40,7 @@ const MyPage = () => {
               },
               genres: detail.genres ?? [],
               premiered: detail.premiered ?? "",
+              summary: detail.summary ?? "",
             };
           }),
         );
