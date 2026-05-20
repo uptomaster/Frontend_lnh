@@ -1,17 +1,21 @@
-import{ create } from 'zustand'
-import{ persist } from 'zustand/middleware'
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 const useAuthStore = create(
     persist(
-        (set) => ({
-            //초기 상태 설정
+        (set, get) => ({
             accessToken: null, 
             
-            //토큰 저장 함수
-            setAccessToken:(token) => set({ accessToken: token}),
+            setAccessToken: (token) => set({ accessToken: token }),
 
-            //로그인 여부 확인 함수
-            isLoggedIn: () => !!set().accessToken, 
+            // [수정] 정석 문법인 get()으로 수정
+            isLoggedIn: () => !!get().accessToken, 
+
+            // ✨ [추가] 로그아웃 시 스토리지 비우기 함수
+            clearAuth: () => {
+                set({ accessToken: null });
+                localStorage.removeItem("accessToken");
+            }
         }),
         {
             name: 'auth-storage',
