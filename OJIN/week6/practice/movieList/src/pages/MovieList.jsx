@@ -1,9 +1,12 @@
 import { useMemo, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import MovieCard from "../components/layouts/MovieCard";
 import SearchBar from "../components/SearchBar";
 import Modal from "../components/layouts/Modal";
-import useRecentShows from "../hooks/useRecentShow";
 import axios from "axios";
+import useRecentShows from "../hooks/useRecentShow";
+import useAuthStore from "../stores/useAuthStore";
+import { saveContentAPI } from "../apis/authApi";
 
 const MovieList = () => {
   const [shows, setShows] = useState([]);
@@ -11,6 +14,8 @@ const MovieList = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const { addShow } = useRecentShows();
+  const { accessToken } = useAuthStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -52,9 +57,21 @@ const MovieList = () => {
   const featured = useMemo(() => shows.slice(0, 4), [shows]);
   const grid = useMemo(() => shows.slice(4, 20), [shows]);
 
-  const handleCardClick = (movie) => {
-    addShow(movie);
-    setSelectedMovie(movie);
+  const handleCardClick = async (movie) => {
+    try {
+      //로그인 하지 않은 사용자는 저장 요청 보내지 못함
+      if (!accessToken) {
+        navigate("/login");
+        return;
+      }
+      // 영화 카드를 저장할때 토근 및 영화 데이터 저장
+      await saveContentAPI(movie, accessToken);
+
+      addShow(movie);
+      setSelectedMovie(movie);
+    } catch (error) {
+      alert("컨텐츠 저장에 실패했습니다.");
+    }
   };
 
   return (

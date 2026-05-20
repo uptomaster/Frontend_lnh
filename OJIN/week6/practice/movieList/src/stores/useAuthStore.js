@@ -4,12 +4,25 @@ const useAuthStore = create(
   persist(
     (set) => ({
       accessToken: null, // 초기 accessToken 상태 = null
+      refreshToken: null,
 
       //토큰 저장 함수
       setAccessToken: (token) => set({ accessToken: token }),
 
+      setTokens: (accessToken, refreshToken) =>
+        set({
+          accessToken,
+          refreshToken,
+        }),
+
       // 로그인 여부 확인. accessToken이 존재하면 true 반환
       isloggedIn: () => !!set().accessToken,
+
+      // 로그아웃. null로 변경하여 저장된 로그인 상태 초기화
+      logout: () => {
+        set({ accessToken: null, refreshToken: null });
+        localStorage.removeItem("auth-storage");
+      },
     }),
     { name: "auth-storage" },
   ),

@@ -6,6 +6,7 @@ import MovieList from "./pages/MovieList";
 import Login from "./pages/Login";
 import Layout from "./components/layouts/Layout";
 import useAuthStore from "./stores/useAuthStore";
+import SignUp from "./pages/SignUp";
 
 function App() {
   const accessToken = useAuthStore((state) => state.accessToken); // zustand 스토어에서 accessToken 상태 가져오기
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<MovieList />} />
           <Route path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
           <Route
             path="mypage"
             element={
