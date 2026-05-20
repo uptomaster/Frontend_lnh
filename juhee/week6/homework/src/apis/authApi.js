@@ -63,3 +63,14 @@ export const saveContentAPI = async(accessToken, show) =>{
         throw new Error("컨텐츠 저장 실패");
     }
 }
+
+export const getContenstAPI = async(accessToken) => {
+    try {
+        const {data} = await axios.get(`${BASE_URL}/api/contents`, {
+            headers: {Authorization: `Bearer ${accessToken}`}
+        })
+        return data;
+    } catch (error) {
+        throw new Error("컨텐츠 조회 실패");
+    }
+}
