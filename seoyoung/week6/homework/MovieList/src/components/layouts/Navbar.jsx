@@ -16,21 +16,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 border-b-1 border-gray-600 left-0 right-0 h-20 bg-black text-white flex items-center justify-between px-10 z-50">
+    <nav className="fixed top-0 border-b-1 border-slate-800 left-0 right-0 h-20 bg-slate-900/80 text-white flex items-center justify-between px-10 z-50">
       <div className="hidden md:flex space-x-10 items-center">
         {/*숨겨져있다가 md면 flex해서보임 */}
-        <Link to="/" className="font-semibold text-2xl hover:text-purple-300">
+        <Link to="/" className="font-semibold text-2xl hover:text-[#F59E0B]">
           MovieList 🎥
         </Link>
         <Link
           to="/top100"
-          className="text-xl hover:text-purple-300 hover:font-bold"
+          className="text-xl hover:text-[#F59E0B] hover:font-bold"
         >
           🏅 Top 100 🏅
         </Link>
         <Link
           to="/mypage"
-          className="text-xl hover:text-purple-300 hover:font-bold"
+          className="text-xl hover:text-[#F59E0B] hover:font-bold"
         >
           😺 My Page 😺
         </Link>
@@ -39,14 +39,14 @@ const Navbar = () => {
       {isLoggedIn ? (
         <button
           onClick={handleLogout}
-          className="hidden md:block text-xl hover:text-purple-300 hover:font-bold"
+          className="hidden md:block text-xl hover:text-[#F59E0B] hover:font-bold"
         >
           LOGOUT
         </button>
       ) : (
         <Link
           to="/login"
-          className="hidden md:block text-xl hover:text-purple-300 hover:font-bold"
+          className="hidden md:block text-xl hover:text-[#F59E0B] hover:font-bold"
         >
           LOGIN
         </Link>
@@ -71,14 +71,14 @@ const Navbar = () => {
         <div className="md:hidden absolute top-20 left-0 right-0 bg-black flex flex-col px-6 space-y-4 ">
           <Link
             to="/top100"
-            className="text-xl hover:text-purple-300 hover:font-bold"
+            className="text-xl hover:text-[#F59E0B] hover:font-bold"
             onClick={() => setIsOpen(false)}
           >
             🏅 Top 100 🏅
           </Link>
           <Link
             to="/mypage"
-            className="text-xl hover:text-purple-300 hover:font-bold"
+            className="text-xl hover:text-[#F59E0B] hover:font-bold"
             onClick={() => setIsOpen(false)}
           >
             😺 My Page 😺
@@ -87,7 +87,7 @@ const Navbar = () => {
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
-              className="w-max text-left text-xl hover:text-purple-300 hover:font-bold"
+              className="w-max text-left text-xl hover:text-[#F59E0B] hover:font-bold"
             >
               LOGOUT
             </button>
@@ -95,7 +95,7 @@ const Navbar = () => {
             <Link
               to="/login"
               onClick={() => setIsOpen(false)}
-              className="w-max text-left text-xl hover:text-purple-300 hover:font-bold"
+              className="w-max text-left text-xl hover:text-[#F59E0B] hover:font-bold"
             >
               LOGIN
             </Link>
