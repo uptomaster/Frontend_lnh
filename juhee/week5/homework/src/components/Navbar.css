@@ -1,0 +1,45 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80px;
+  padding: 0 80px;
+
+  border-bottom: 1px solid #eee;
+  background-color: white;
+}
+
+.Navbar img {
+  width: auto;
+  object-fit: contain;
+}
+
+.pc {
+  height: 115px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: block;
+    height: 35px;
+  }
+}
+
+.Navbar div {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+}
+
+.Navbar div:hover {
+  text-decoration: underline;
+}

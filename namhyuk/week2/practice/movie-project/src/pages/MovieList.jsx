@@ -87,7 +87,7 @@ const MovieList = () => {
               <span className="w-1 h-6 bg-indigo-500 rounded-full"></span>
               지금 뜨는 콘텐츠 (Featured)
             </h2>
-            <div className="flex gap-6 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
+            <div className="md:grid lg:grid-cols-6 sm:grid-cols-3 flex gap-6 overflow-x-auto no-scrollbar pb-4 -mx-2 px-2">
               {featured.map((show) => (
                 <div key={show.id} className="w-64 md:w-80 flex-shrink-0 transition-transform duration-300 hover:z-10">
                   <MovieCard show={show} onClick={() => handleCardClick(show)} />
