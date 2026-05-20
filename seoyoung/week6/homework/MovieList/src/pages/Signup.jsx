@@ -29,41 +29,46 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="space-y-3">
-        <input
-s    type="email"
-          placeholder="email"
-          className="w-full"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        ></input>
-        <input
-          type="password"
-          placeholder="비밀번호"
-          className="w-full"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        ></input>
-        <input
-          type="password"
-          placeholder="비밀번호"
-          className="w-full"
-          value={checkpassword}
-          onChange={(e) => setCheckPassword(e.target.value)}
-        ></input>
-        {checkpassword === password ? (
-          <div>비밀번호가 일치합니다</div>
-        ) : (
-          <div className="text-red">비밀번호가 일치하지 않습니다</div>
-        )}
-        <button
-          type="submit"
-          className="mt-1 h-12 w-full rounded bg-blue-600 text-base font-bold text-white"
-        >
-          회원가입 하기
-        </button>
-      </form>
+    <div
+      className="min-h-screen text-white flex items-center justify-center px-6 flex flex-col 
+    "
+    >
+      <div className="w-full max-w-[420px] rounded-lg bg-black/75 p-10 items-center">
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <input
+            type="email"
+            placeholder="email"
+            className="w-full border border-white p-4"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
+          <input
+            type="password"
+            placeholder="비밀번호"
+            className="w-full border border-white p-4"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></input>
+          <input
+            type="password"
+            placeholder="비밀번호"
+            className="w-full border border-white p-4"
+            value={checkpassword}
+            onChange={(e) => setCheckPassword(e.target.value)}
+          ></input>
+          {checkpassword === password && password ? (
+            <div>비밀번호가 일치합니다</div>
+          ) : (
+            <div className="text-red">비밀번호가 일치하지 않습니다</div>
+          )}
+          <button
+            type="submit"
+            className="mt-1 h-12 w-full rounded bg-blue-300 text-base font-bold text-white"
+          >
+            회원가입 하기
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
