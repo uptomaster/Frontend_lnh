@@ -12,7 +12,7 @@ const Navbar = () => {
   const handleLogout = async (e) => {
     clearAccessToken();
     alert('로그아웃 됐습니다'); //확인용
-    navigate('/'); //로그인 성공 후 홈페이지로 이동
+    navigate('/Login'); //로그아웃 이후 로그인 페이지로 이동
   };
 
   return (
@@ -20,19 +20,19 @@ const Navbar = () => {
       <div className="hidden md:flex space-x-10 items-center">
         {/*숨겨져있다가 md면 flex해서보임 */}
         <Link to="/" className="font-semibold text-2xl hover:text-purple-300">
-          MovieList🎥
+          MovieList 🎥
         </Link>
         <Link
           to="/top100"
           className="text-xl hover:text-purple-300 hover:font-bold"
         >
-          Top 100
+          🏅 Top 100 🏅
         </Link>
         <Link
           to="/mypage"
           className="text-xl hover:text-purple-300 hover:font-bold"
         >
-          My Page
+          😺 My Page 😺
         </Link>
       </div>
       {/*숨겨져있다가 md면 보이도록 함 */}
@@ -41,14 +41,14 @@ const Navbar = () => {
           onClick={handleLogout}
           className="hidden md:block text-xl hover:text-purple-300 hover:font-bold"
         >
-          Logout
+          LOGOUT
         </button>
       ) : (
         <Link
           to="/login"
           className="hidden md:block text-xl hover:text-purple-300 hover:font-bold"
         >
-          Login
+          LOGIN
         </Link>
       )}
 
@@ -74,14 +74,14 @@ const Navbar = () => {
             className="text-xl hover:text-purple-300 hover:font-bold"
             onClick={() => setIsOpen(false)}
           >
-            Top 100
+            🏅 Top 100 🏅
           </Link>
           <Link
             to="/mypage"
             className="text-xl hover:text-purple-300 hover:font-bold"
             onClick={() => setIsOpen(false)}
           >
-            My Page
+            😺 My Page 😺
           </Link>
 
           {isLoggedIn ? (
@@ -89,7 +89,7 @@ const Navbar = () => {
               onClick={handleLogout}
               className="w-max text-left text-xl hover:text-purple-300 hover:font-bold"
             >
-              Logout
+              LOGOUT
             </button>
           ) : (
             <Link
@@ -97,7 +97,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className="w-max text-left text-xl hover:text-purple-300 hover:font-bold"
             >
-              Login
+              LOGIN
             </Link>
           )}
         </div>

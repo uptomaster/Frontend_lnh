@@ -26,36 +26,39 @@ const Login = () => {
 
   return (
     <div
-      className="min-h-screen bg-[#141414] text-white flex items-center justify-center px-6 flex flex-col
+      className="min-h-screen bg-[#141414] text-white flex items-center justify-center px-6 flex flex-col 
     "
     >
       <div className="w-full max-w-[420px] rounded-lg bg-black/75 p-10">
-        <h1 className="mb-6 text-3xl font-bold">로그인</h1>
+        <h1 className="mb-6 text-3xl font-bold ">로그인</h1>
         {/*로그인 폼 */}
         <form className="space-y-3" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="아이디"
-            className="w-full"
+            className="w-full border border-white p-4"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           ></input>
           <input
             type="password"
             placeholder="비밀번호"
-            className="w-full"
+            className="w-full border border-white p-4"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input>
           <button
             type="submit"
-            className="mt-1 h-12 w-full rounded bg-blue-600 text-base font-bold text-white cursor-pointer"
+            className="mt-1 h-12 w-full rounded-xl bg-blue-300 text-base font-bold text-white cursor-pointer"
           >
             로그인 하기
           </button>
         </form>
       </div>
-      <Link to="/Signup" className="bg-blue-700 m-5 p-4 rounded">
+      <Link
+        to="/Signup"
+        className="bg-blue-300 m-5 px-4 py-2 rounded-xl font-bold"
+      >
         회원가입하기
       </Link>
     </div>
