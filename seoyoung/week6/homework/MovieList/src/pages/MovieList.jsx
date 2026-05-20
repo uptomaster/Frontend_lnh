@@ -7,6 +7,8 @@ import { useState, useEffect, useMemo } from 'react';
 import useRecentShows from '../hooks/useRecentShows';
 import SearchBar from '../components/SearchBar';
 import MovieModal from '../components/MovieModal';
+import { ContentGETAPI } from '../apis/authApi'; //로그인 API 함수
+import useAuthStore from '../stores/useAuthStore'; //zustand 인증 상태 관리 스토어
 
 const MovieList = () => {
   //TV show 목록 저장
