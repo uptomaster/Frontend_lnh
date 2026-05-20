@@ -63,7 +63,7 @@ const Navbar = () => {
         {accessToken ? (
           <button
             onClick={handleLogoutClick}
-            className="hidden md:block text-sm md:text-base text-gray-300 hover:text-red-500 transition-colors"
+            className="text-left text-gray-300 hover:text-white transition-colors duration-300"
           >
             Logout
           </button>
