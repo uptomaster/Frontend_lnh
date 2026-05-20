@@ -32,7 +32,7 @@ const Signup = () => {
     <div>
       <form onSubmit={handleSubmit} className="space-y-3">
         <input
-          type="email"
+s    type="email"
           placeholder="email"
           className="w-full"
           value={email}

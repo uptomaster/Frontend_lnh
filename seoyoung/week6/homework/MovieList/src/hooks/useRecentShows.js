@@ -1,6 +1,6 @@
 //useRecent.jsx
-
 import { useState } from 'react';
+import { ContentSaveAPI } from '../apis/authApi';
 
 const KEY = 'recentShows';
 
@@ -12,15 +12,31 @@ const useRecentShows = () => {
   });
 
   //최근 본 영화를 추가하기
-  const addShow = (show) => {
+  const addShow = async (show) => {
+    if (!show) return;
+
     setRecentShows((prev) => {
+      //prev가 배열이 아닐 때 해결
+      const currentList = Array.isArray(prev) ? prev : [];
       //새로운 배열 생성 -> 새로 클릭한 show를 맨 앞에 추가하고, 같은 아이디인건 제거함, 최대 10개 저장
+
       const next = [show, ...prev.filter((s) => s.id !== show.id)].slice(0, 10);
 
       localStorage.setItem(KEY, JSON.stringify(next));
 
       return next;
     });
+
+    try {
+      //누른 show 정보 넘기기
+      await ContentSaveAPI(show);
+      console.log('저장완료');
+    } catch (error) {
+      console.error(
+        '추가 과정에ㅐ서 발생한 에러 : ',
+        error.response?.data || error.message
+      );
+    }
   };
 
   //특정 영화를 삭제하기

@@ -1,20 +1,8 @@
+import useAuthStore from '../stores/useAuthStore';
 import axios from 'axios'; //HTTP 클라이언트 라이브러리
+import { useActionData } from 'react-router-dom';
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-
-export const signupAPI = async ({ email, password }) => {
-  try {
-    const { data } = await axios.post(`${BASE_URL}/api/auth/signup`, {
-      email,
-      password,
-    });
-
-    return data;
-  } catch (error) {
-    console.error('에러 원인:', error.response?.data || error.message);
-    throw new Error('회원가입 실패');
-  }
-};
 
 export const loginAPI = async ({ username, password }) => {
   try {
@@ -54,5 +42,62 @@ export const logoutAPI = async (accessToken) => {
   } catch (error) {
     console.error('에러 원인:', error.response?.data || error.message);
     throw new Error('로그아웃 실패햇긔');
+  }
+};
+
+export const signupAPI = async ({ email, password }) => {
+  try {
+    const { data } = await axios.post(`${BASE_URL}/api/auth/signup`, {
+      email,
+      password,
+    });
+
+    return data;
+  } catch (error) {
+    console.error('에러 원인:', error.response?.data || error.message);
+    throw new Error('회원가입 실패');
+  }
+};
+
+export const ContentSaveAPI = async (show) => {
+  const token = useAuthStore.getState().accessToken;
+  console.log('현재 토큰 확인', token);
+
+  try {
+    const request = {
+      id: show.id,
+      name: show.name,
+      image: {
+        medium: show.image?.medium ?? show.image?.original ?? '',
+      },
+    };
+
+    const { data } = await axios.post(`${BASE_URL}/api/contents`, request, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    return data;
+  } catch (error) {
+    console.error('에러 원인:', error.response?.data || error.message);
+    throw new Error('영화 목록 저장 실패');
+  }
+};
+
+export const ContentGETAPI = async (accessToken) => {
+  try {
+    const { data } = await axios.get(`${BASE_URL}/api/contents`, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`, // 백엔드 검문소 통과용 토큰 탑재
+      },
+    });
+
+    return data;
+  } catch (error) {
+    console.error('에러 원인:', error.response?.data || error.message);
+    throw new Error('영화 목록 저장 실패');
   }
 };
