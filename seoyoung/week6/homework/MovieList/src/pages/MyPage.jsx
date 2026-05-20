@@ -22,17 +22,19 @@ const Mypage = () => {
             {/*grid 기능으로 한 줄에 6개씩 배치*/}
             {/*카드를 클릭하면 해당 영화 데이터를 상태에 저장해서 Modal을 염*/}
             {serverShows.map((show) => {
-              const fullData = recentShows.find(
+              //방금 클릭한 카드의 모든 데이터 가져오기
+              const mergedData = recentShows.find(
                 (recent) => String(recent.id) === String(show.tvMazeId)
               );
-              const card = fullData
-                ? fullData
-                : {
-                    ...show,
-                    image: {
-                      medium: show.ImageUrl,
-                    },
-                  };
+
+              //모든 데이터를 다 가질 수 있도록 이어붙이기(백엔드에서 장르 등등은 주지 않기 때문)
+              const card = {
+                ...show,
+                ...(mergedData || {}),
+                image: {
+                  medium: show.imageUrl,
+                },
+              };
 
               return (
                 <div

@@ -49,13 +49,13 @@ const Login = () => {
           ></input>
           <button
             type="submit"
-            className="mt-1 h-12 w-full rounded bg-blue-600 text-base font-bold text-white"
+            className="mt-1 h-12 w-full rounded bg-blue-600 text-base font-bold text-white cursor-pointer"
           >
             로그인 하기
           </button>
         </form>
       </div>
-      <Link to="/Signup" className="bg-blue-700 p-4 rounded">
+      <Link to="/Signup" className="bg-blue-700 m-5 p-4 rounded">
         회원가입하기
       </Link>
     </div>

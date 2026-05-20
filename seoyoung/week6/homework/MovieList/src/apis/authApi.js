@@ -88,16 +88,17 @@ export const ContentSaveAPI = async (show) => {
 
 export const ContentGETAPI = async (accessToken) => {
   try {
+    //post 에서 get으로 변경
     const { data } = await axios.get(`${BASE_URL}/api/contents`, {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${accessToken}`, // 백엔드 검문소 통과용 토큰 탑재
+        Authorization: `Bearer ${accessToken}`,
       },
     });
 
     return data;
   } catch (error) {
     console.error('에러 원인:', error.response?.data || error.message);
-    throw new Error('영화 목록 저장 실패');
+    throw new Error('영화 목록 불러오기 실패');
   }
 };
