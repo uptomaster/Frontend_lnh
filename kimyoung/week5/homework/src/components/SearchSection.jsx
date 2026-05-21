@@ -1,0 +1,35 @@
+function SearchSection() {
+  return (
+    <section className="hero">
+      <div className="search-box">
+        <h1>서울 숙소 찾기</h1>
+
+        <p>
+          멋진 여행의 시작은 에어비앤비.
+          <br />
+          어떤 여행에도 딱 맞는 특별한 숙소를 찾아보세요.
+        </p>
+
+        <label>위치</label>
+
+        <input type="text" value="Seoul, Korea" readOnly />
+
+        <div className="date-row">
+          <div>
+            <label>체크인</label>
+            <input type="text" value="날짜 추가" readOnly />
+          </div>
+
+          <div>
+            <label>체크아웃</label>
+            <input type="text" value="날짜 추가" readOnly />
+          </div>
+        </div>
+
+        <button className="search-button">검색하기</button>
+      </div>
+    </section>
+  );
+}
+
+export default SearchSection;
