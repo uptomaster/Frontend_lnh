@@ -57,7 +57,7 @@ const Login = () => {
 
         <p className="mt-5 text-sm text-gray-400">
           계정이 없나요?{' '}
-          <Link to="/signup" className="text-white underline">
+          <Link to="/signup" className="text-white">
             회원가입
           </Link>
         </p>
