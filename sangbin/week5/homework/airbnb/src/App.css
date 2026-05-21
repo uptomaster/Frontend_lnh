@@ -1,0 +1,44 @@
+.section {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 정보 Card 3개 — 가운데 영역 그리드 */
+.info-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.main-title {
+  margin-bottom: 16px;
+}
+
+.main-title h2 {
+  margin-bottom: 5px;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+}
+
+.main-title p {
+  color: #717171;
+  font-size: 14px;
+}
+
+.button-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .info-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

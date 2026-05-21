@@ -1,0 +1,32 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import Mypage from "./pages/Mypage"
+import NotFound from "./pages/NotFound"
+import Top100 from "./pages/Top100"
+import MovieList from "./pages/MovieList"
+import Login from "./pages/Login"
+// ✨ [추가] 회원가입 컴포넌트 임포트
+import Signup from "./pages/Signup" 
+import Layout from "./components/layouts/Layout"
+import useAuthStore from './stores/useAuthStore'
+
+function App() {
+  const accessToken = useAuthStore((state) => state.accessToken)
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MovieList />} />
+          <Route path="login" element={<Login />} />
+          {/* ✨ [추가] 회원가입 라우트 연결 */}
+          <Route path="signup" element={<Signup />} />
+          <Route path="mypage" element={accessToken ? <Mypage /> : <Navigate to='/login' replace/>} />
+          <Route path="top100" element={<Top100 />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App

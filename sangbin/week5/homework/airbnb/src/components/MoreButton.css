@@ -1,0 +1,12 @@
+.more-btn {
+  padding: 10px 20px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.more-btn:hover {
+  background-color: #f7f7f7;
+}
