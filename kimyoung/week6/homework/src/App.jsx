@@ -4,6 +4,7 @@ import MyPage from './pages/Mypage';
 import NotFound from './pages/NotFound';
 import Top100 from './pages/Top100';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import { Layout } from './components/layouts/Layout';
 import useAuthStore from './stores/useAuthStore';
 
@@ -15,14 +16,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MovieList />} />
+          <Route path="top100" element={<Top100 />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
           <Route
             path="mypage"
             element={
               accessToken ? <MyPage /> : <Navigate to="/login" replace />
             }
           />
-          <Route path="top100" element={<Top100 />} />
-          <Route path="login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
