@@ -4,8 +4,8 @@ import { Search } from 'lucide-react';
 
 const SearchBar = ({ value, onChange }) => {
   return (
-    <div className="relative">
-      <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+    <div className="relative border border-white rounded-xl">
+      <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 " />
       <input
         type="text"
         value={value}
